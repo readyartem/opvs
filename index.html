@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,15 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=Roboto+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <!-- GSAP / ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar">
@@ -43,11 +47,13 @@
     <section class="top-scroll-hero" id="top-scroll-hero">
         <!-- Faint Background "OPVS AGENTS" text -->
         <div class="massive-bg-text" id="massive-bg-text">OPVS AGENTS</div>
-        
+
         <div class="giant-character-wrapper" id="giant-character-wrapper" style="z-index: 5;">
-            <div id="parallax-inner" style="width: 100%; height: 100%; position: relative; display: flex; justify-content: center; align-items: center;">
+            <div id="parallax-inner"
+                style="width: 100%; height: 100%; position: relative; display: flex; justify-content: center; align-items: center;">
                 <div class="hero-glow large-glow" id="main-glow"></div>
-                <img src="assets/opvs_hero_agent_nobg.png" alt="Giant OPVS Agent" class="giant-character" id="main-agent">
+                <img src="assets/opvs_hero_agent_nobg.png" alt="Giant OPVS Agent" class="giant-character"
+                    id="main-agent">
             </div>
         </div>
 
@@ -62,28 +68,31 @@
 
     <!-- Main Container matches ClickUp max-width logic -->
     <main class="main-content">
-        
+
         <!-- Target 3-Column Layout (where the agent shrinks into) -->
         <section class="hero-section" id="target-3col">
-            
+
             <div class="hero-grid">
                 <!-- Left Column -->
                 <div class="hero-left animate-up">
                     <div class="left-top-block mb-12">
-                        <div class="eyebrow" style="color: var(--accent); margin-bottom: 0.5rem;">THE IDENTITY SYSTEM</div>
+                        <div class="eyebrow" style="color: var(--accent); margin-bottom: 0.5rem;">THE IDENTITY SYSTEM
+                        </div>
                         <h2 class="hero-title-secondary">7-File Identity</h2>
-                        <p class="hero-description">Your AI employee arrives with personality, operating rules, tools, and a heartbeat schedule. Not a blank prompt. A pre-configured person.</p>
+                        <p class="hero-description">Your AI employee arrives with personality, operating rules, tools,
+                            and a heartbeat schedule. Not a blank prompt. A pre-configured person.</p>
                     </div>
-                    
+
                     <div class="col-divider"></div>
-                    
+
                     <div class="left-bottom-block mt-8">
                         <div class="power-label left-align">CORE PROTOCOLS</div>
                         <ul class="power-list pills left-align">
                             <li class="interactive-pill text-pill" data-target="pill-memory">
                                 <div class="pill-header"><span class="plus-icon mr-2">⊕</span> Self-Correcting</div>
                                 <div class="pill-body" id="pill-memory">
-                                    <p>Mistakes become permanent rules in LEARNINGS.md. They never repeat a documented mistake.</p>
+                                    <p>Mistakes become permanent rules in LEARNINGS.md. They never repeat a documented
+                                        mistake.</p>
                                 </div>
                             </li>
                             <li class="interactive-pill text-pill" data-target="pill-context">
@@ -106,7 +115,8 @@
                     <div class="right-top-block mb-12">
                         <div class="power-label right-align">THE WORKPLACE</div>
                         <div class="callout-box right-callout">
-                            <strong>Predictable.</strong> Agents check in on a configurable heartbeat schedule. You know exactly when they'll act.
+                            <strong>Predictable.</strong> Agents check in on a configurable heartbeat schedule. You know
+                            exactly when they'll act.
                         </div>
                         <ul class="power-list pills right-align">
                             <li class="interactive-pill text-pill" data-target="pill-board">
@@ -135,21 +145,27 @@
                     <div class="right-bottom-block mt-8">
                         <div class="power-label right-align" style="color: var(--primary);">SPIDERIQ DATA</div>
                         <ul class="power-list pills right-align">
-                            <li class="static-pill text-pill">44K-City Maps DB <span class="plus-icon ml-2">⊕</span></li>
-                            <li class="static-pill text-pill">Email Verification Fleet <span class="plus-icon ml-2">⊕</span></li>
+                            <li class="static-pill text-pill">44K-City Maps DB <span class="plus-icon ml-2">⊕</span>
+                            </li>
+                            <li class="static-pill text-pill">Email Verification Fleet <span
+                                    class="plus-icon ml-2">⊕</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="hero-divider"></div>
         </section>
+
+
+
         <!-- Block 3: Agents Catalog (ClickUp Clone) -->
         <section class="cu-catalog-section" id="catalog">
             <div class="cu-container">
                 <div class="cu-catalog-header cu-slider-header">
                     <div>
                         <h2 class="cu-section-title">Agents for everything</h2>
-                        <p class="cu-section-subtitle">The world's only infinite agent catalog where anyone can create and customize agents for any type of work imaginable.</p>
+                        <p class="cu-section-subtitle">The world's only infinite agent catalog where anyone can create
+                            and customize agents for any type of work imaginable.</p>
                     </div>
                     <div class="cu-slider-nav">
                         <button class="slider-arrow prev-arrow" id="cat-prev">←</button>
@@ -157,7 +173,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="cu-catalog-scroller" id="catalog-scroller">
                 <div class="cu-catalog-track">
                     <!-- Cards -->
@@ -167,40 +183,45 @@
                         </div>
                         <div class="cu-agent-media">
                             <img src="assets/agent_variant_a.png" alt="Marketing Agent" class="cu-agent-img static-img">
-                            <video src="assets/agent_variant_a.mp4" autoplay loop muted playsinline class="cu-agent-img animated-media"></video>
+                            <video src="assets/agent_variant_a.mp4" autoplay loop muted playsinline
+                                class="cu-agent-img animated-media"></video>
                         </div>
                         <button class="cu-add-btn">+</button>
                     </div>
-                    
+
                     <div class="cu-agent-card bg-blue">
                         <div class="cu-agent-card-header">
                             Sales & Outreach
                         </div>
                         <div class="cu-agent-media">
                             <img src="assets/agent_variant_b.png" alt="Sales Agent" class="cu-agent-img static-img">
-                            <video src="assets/agent_variant_b.mp4" autoplay loop muted playsinline class="cu-agent-img animated-media"></video>
+                            <video src="assets/agent_variant_b.mp4" autoplay loop muted playsinline
+                                class="cu-agent-img animated-media"></video>
                         </div>
                         <button class="cu-add-btn">+</button>
                     </div>
-                    
+
                     <div class="cu-agent-card bg-green">
                         <div class="cu-agent-card-header">
                             Development & Tech
                         </div>
                         <div class="cu-agent-media">
-                            <img src="assets/agent_dev_dynamic.png" alt="Coding Agent" class="cu-agent-img static-img">
-                            <video src="assets/agent_dev_dynamic.mp4" autoplay loop muted playsinline class="cu-agent-img animated-media"></video>
+                            <img src="assets/agent_dev_new.png" alt="Coding Agent" class="cu-agent-img static-img">
+                            <video src="assets/agent_dev_fun.mp4" autoplay loop muted playsinline
+                                class="cu-agent-img animated-media"></video>
                         </div>
                         <button class="cu-add-btn">+</button>
                     </div>
-                    
+
                     <div class="cu-agent-card bg-purple">
                         <div class="cu-agent-card-header">
                             Creative & Design
                         </div>
                         <div class="cu-agent-media">
-                            <img src="assets/agent_creative_dynamic.png" alt="Designer Agent" class="cu-agent-img static-img">
-                            <video src="assets/agent_creative_dynamic.mp4" autoplay loop muted playsinline class="cu-agent-img animated-media"></video>
+                            <img src="assets/agent_creative_new.png" alt="Designer Agent"
+                                class="cu-agent-img static-img">
+                            <video src="assets/agent_creative_fun.mp4" autoplay loop muted playsinline
+                                class="cu-agent-img animated-media"></video>
                         </div>
                         <button class="cu-add-btn">+</button>
                     </div>
@@ -210,10 +231,14 @@
                             Custom Agents
                         </div>
                         <div class="cu-agent-media">
-                            <img src="assets/agent_custom_dynamic.png" alt="Custom Agent" class="cu-agent-img static-img" style="filter: grayscale(1) brightness(0.3); opacity: 0.5;">
-                            <video src="assets/agent_custom.mp4" autoplay loop muted playsinline class="cu-agent-img animated-media"></video>
+                            <img src="assets/agent_custom_dynamic.png" alt="Custom Agent"
+                                class="cu-agent-img static-img"
+                                style="filter: grayscale(1) brightness(0.3); opacity: 0.5;">
+                            <video src="assets/agent_custom.mp4" autoplay loop muted playsinline
+                                class="cu-agent-img animated-media"></video>
                         </div>
-                        <button class="cu-add-btn" style="background:var(--text-primary); color:var(--bg-primary);">Create Custom</button>
+                        <button class="cu-add-btn"
+                            style="background:var(--text-primary); color:var(--bg-primary);">Create Custom</button>
                     </div>
                 </div>
             </div>
@@ -227,7 +252,9 @@
                     <img src="assets/agent_variant_b.png" class="stat-avatar right">
                 </div>
                 <div class="cu-stat-number stat-count-up">128+</div>
-                <div class="cu-stat-label" style="text-align: center; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); margin-top: 1rem;">AI Workers Deployed via OPVS</div>
+                <div class="cu-stat-label"
+                    style="text-align: center; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); margin-top: 1rem;">
+                    AI Workers Deployed via OPVS</div>
             </div>
         </section>
 
@@ -237,7 +264,7 @@
                 <div class="cu-bento-header text-center mb-16">
                     <h2 class="cu-section-title">The Complete Infrastructure</h2>
                 </div>
-                
+
                 <div class="cu-bento-grid">
                     <!-- Left Tall -->
                     <div class="cu-bento-card tall bg-dark-card">
@@ -246,40 +273,45 @@
                             <p>Conversational AI that designs and provisions the entire workspace from scratch.</p>
                         </div>
                         <div class="cu-bento-mockup">
-                            <img src="assets/ai_office_canvas.png" alt="Workspace Planner" style="width:100%; height:auto; border-radius: 12px 12px 0 0; border: 1px solid var(--border-color); border-bottom: none;">
+                            <img src="assets/ai_office_canvas.png" alt="Workspace Planner"
+                                style="width:100%; height:auto; border-radius: 12px 12px 0 0; border: 1px solid var(--border-color); border-bottom: none;">
                         </div>
                     </div>
-                    
+
                     <!-- Center Stack -->
                     <div class="cu-bento-col">
                         <div class="cu-bento-card bg-dark-card">
                             <div class="card-content">
-                                <span class="card-icon" style="font-size:2rem;display:block;margin-bottom:1rem;">🏗️</span>
+                                <span class="card-icon"
+                                    style="font-size:2rem;display:block;margin-bottom:1rem;">🏗️</span>
                                 <h3>AgentBoard</h3>
                                 <p>Kanban visualization for AI task execution.</p>
                             </div>
                         </div>
                         <div class="cu-bento-card bg-dark-card">
                             <div class="card-content">
-                                <span class="card-icon" style="font-size:2rem;display:block;margin-bottom:1rem;">💻</span>
+                                <span class="card-icon"
+                                    style="font-size:2rem;display:block;margin-bottom:1rem;">💻</span>
                                 <h3>AgentDocs</h3>
                                 <p>Markdown-native context workspace.</p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Right Stack -->
                     <div class="cu-bento-col">
                         <div class="cu-bento-card bg-dark-card">
                             <div class="card-content">
-                                <span class="card-icon" style="font-size:2rem;display:block;margin-bottom:1rem;">✉️</span>
+                                <span class="card-icon"
+                                    style="font-size:2rem;display:block;margin-bottom:1rem;">✉️</span>
                                 <h3>AOR SDRs</h3>
                                 <p>AgentOutreachRoute: AI SDR campaigns that research, compose, and reply.</p>
                             </div>
                         </div>
                         <div class="cu-bento-card bg-dark-card">
                             <div class="card-content">
-                                <span class="card-icon" style="font-size:2rem;display:block;margin-bottom:1rem;">⚡</span>
+                                <span class="card-icon"
+                                    style="font-size:2rem;display:block;margin-bottom:1rem;">⚡</span>
                                 <h3>OpenClaw Runtime</h3>
                                 <p>Multi-channel self-hosted agent framework.</p>
                             </div>
@@ -296,27 +328,35 @@
                     <div class="cu-sticky-content">
                         <div class="cu-eyebrow">THE OPVS ADVANTAGE</div>
                         <h2 class="cu-section-title">AI doesn't just execute tasks. It studies your business.</h2>
-                        <p class="cu-section-subtitle">Every task an OPVS agent completes is automatically logged, analyzed, and synthesized into your shared workspace knowledge base. When you hire your next agent, they inherit the exact context of your company on day one.</p>
-                        
+                        <p class="cu-section-subtitle">Every task an OPVS agent completes is automatically logged,
+                            analyzed, and synthesized into your shared workspace knowledge base. When you hire your next
+                            agent, they inherit the exact context of your company on day one.</p>
+
                         <ul class="cu-sticky-features">
                             <li>
-                                <div class="sf-title"><span class="check" style="color: var(--accent);">✓</span> 100% Retained Knowledge</div>
-                                <div class="sf-desc">The LEARNINGS.md file captures every domain-specific preference.</div>
+                                <div class="sf-title"><span class="check" style="color: var(--accent);">✓</span> 100%
+                                    Retained Knowledge</div>
+                                <div class="sf-desc">The LEARNINGS.md file captures every domain-specific preference.
+                                </div>
                             </li>
                             <li>
-                                <div class="sf-title"><span class="check" style="color: var(--accent);">✓</span> Full Audit Trail</div>
-                                <div class="sf-desc">View every API call, email sent, and file modified by your agents.</div>
+                                <div class="sf-title"><span class="check" style="color: var(--accent);">✓</span> Full
+                                    Audit Trail</div>
+                                <div class="sf-desc">View every API call, email sent, and file modified by your agents.
+                                </div>
                             </li>
                             <li>
-                                <div class="sf-title"><span class="check" style="color: var(--accent);">✓</span> Seamless Onboarding</div>
-                                <div class="sf-desc">New agents read your organization's context files before their first heartbeat.</div>
+                                <div class="sf-title"><span class="check" style="color: var(--accent);">✓</span>
+                                    Seamless Onboarding</div>
+                                <div class="sf-desc">New agents read your organization's context files before their
+                                    first heartbeat.</div>
                             </li>
                         </ul>
-                        
+
                         <button class="btn btn-primary btn-large mt-6">Explore Platform features</button>
                     </div>
                 </div>
-                
+
                 <div class="cu-sticky-right">
                     <div class="cu-scroll-card">
                         <img src="assets/kanban_board.png" alt="AgentBoard Kanban" class="scroll-img">
@@ -334,25 +374,28 @@
                 <div class="cu-cap-header text-center mb-16">
                     <h2 class="cu-section-title">Most businesses are adding AI tools.<br>You need AI employees.</h2>
                 </div>
-                
+
                 <div class="cu-cap-grid">
                     <div class="cu-cap-card">
                         <div class="cap-icon">⚙️</div>
                         <h3>Autonomy</h3>
                         <p class="cap-bad"><strong>Tools:</strong> Wait for human prompts.</p>
-                        <p class="cap-good" style="color: var(--accent);"><strong>OPVS Agents:</strong> Check their boards and execute on a heartbeat schedule.</p>
+                        <p class="cap-good" style="color: var(--accent);"><strong>OPVS Agents:</strong> Check their
+                            boards and execute on a heartbeat schedule.</p>
                     </div>
                     <div class="cu-cap-card">
                         <div class="cap-icon">🧠</div>
                         <h3>Memory</h3>
                         <p class="cap-bad"><strong>Tools:</strong> Forget everything between chat sessions.</p>
-                        <p class="cap-good" style="color: var(--accent);"><strong>OPVS Agents:</strong> Maintain a perpetual LEARNINGS.md context file.</p>
+                        <p class="cap-good" style="color: var(--accent);"><strong>OPVS Agents:</strong> Maintain a
+                            perpetual LEARNINGS.md context file.</p>
                     </div>
                     <div class="cu-cap-card">
                         <div class="cap-icon">📊</div>
                         <h3>Accountability</h3>
                         <p class="cap-bad"><strong>Tools:</strong> Output invisible black-box text.</p>
-                        <p class="cap-good" style="color: var(--accent);"><strong>OPVS Agents:</strong> Log every action to AgentBoard for full auditability.</p>
+                        <p class="cap-good" style="color: var(--accent);"><strong>OPVS Agents:</strong> Log every action
+                            to AgentBoard for full auditability.</p>
                     </div>
                 </div>
             </div>
@@ -364,7 +407,7 @@
                 <div class="cu-faq-header text-center mb-12">
                     <h2 class="cu-section-title">Frequently asked questions</h2>
                 </div>
-                
+
                 <div class="cu-faq-list">
                     <details class="cu-faq-item">
                         <summary class="cu-faq-q">
@@ -372,7 +415,8 @@
                             <span class="cu-faq-icon">+</span>
                         </summary>
                         <div class="cu-faq-a">
-                            <p>Enterprise-grade by default. OpenClaw supports deep VPC integrations, SOC2 compliance, and zero-data-retention modes. Your proprietary data never trains our base models.</p>
+                            <p>Enterprise-grade by default. OpenClaw supports deep VPC integrations, SOC2 compliance,
+                                and zero-data-retention modes. Your proprietary data never trains our base models.</p>
                         </div>
                     </details>
 
@@ -382,7 +426,8 @@
                             <span class="cu-faq-icon">+</span>
                         </summary>
                         <div class="cu-faq-a">
-                            <p>None at all. OPVS Agents are configured using natural language SOUL.md files and instructed just like human employees via the AgentBoard chat interface.</p>
+                            <p>None at all. OPVS Agents are configured using natural language SOUL.md files and
+                                instructed just like human employees via the AgentBoard chat interface.</p>
                         </div>
                     </details>
 
@@ -392,7 +437,9 @@
                             <span class="cu-faq-icon">+</span>
                         </summary>
                         <div class="cu-faq-a">
-                            <p>GPTs are reactive chat wrappers. OPVS Agents are proactive, asynchronous workers running on the OpenClaw VM. They can execute background tasks, manage cloud infrastructure, and retain long-term memory across your entire workspace.</p>
+                            <p>GPTs are reactive chat wrappers. OPVS Agents are proactive, asynchronous workers running
+                                on the OpenClaw VM. They can execute background tasks, manage cloud infrastructure, and
+                                retain long-term memory across your entire workspace.</p>
                         </div>
                     </details>
 
@@ -402,7 +449,9 @@
                             <span class="cu-faq-icon">+</span>
                         </summary>
                         <div class="cu-faq-a">
-                            <p>Agents feature built-in 'Confidence Thresholds'. If an agent is unsure about a destructive action (like deleting a database table or sending a mass email), it pauses execution and pings a human manager for approval.</p>
+                            <p>Agents feature built-in 'Confidence Thresholds'. If an agent is unsure about a
+                                destructive action (like deleting a database table or sending a mass email), it pauses
+                                execution and pings a human manager for approval.</p>
                         </div>
                     </details>
                 </div>
@@ -412,8 +461,11 @@
         <!-- Block 8b: Final CTA -->
         <section class="cu-final-cta border-top">
             <div class="cu-container text-center">
-                <h2 class="cu-massive-title" style="font-size: clamp(4rem, 8vw, 6rem); letter-spacing: -0.04em; max-width: 900px; margin: 0 auto;">Hire your first OPVS agent today.</h2>
-                <button class="btn btn-primary btn-large mt-8" style="padding: 1.5rem 3rem; font-size: 1.25rem;">Start Free Trial</button>
+                <h2 class="cu-massive-title"
+                    style="font-size: clamp(4rem, 8vw, 6rem); letter-spacing: -0.04em; max-width: 900px; margin: 0 auto;">
+                    Hire your first OPVS agent today.</h2>
+                <button class="btn btn-primary btn-large mt-8" style="padding: 1.5rem 3rem; font-size: 1.25rem;">Start
+                    Free Trial</button>
             </div>
         </section>
 
@@ -425,7 +477,9 @@
             <div class="cu-footer-grid">
                 <div class="cu-footer-brand">
                     <div class="logo font-heading text-2xl mb-4 font-bold">OPVS.ai</div>
-                    <p class="footer-tag" style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 250px;">The operating system for autonomous AI employees.</p>
+                    <p class="footer-tag"
+                        style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 250px;">The operating
+                        system for autonomous AI employees.</p>
                     <div class="social-links" style="display:flex; gap:1rem;">
                         <a href="#" style="color: var(--text-tertiary);">X</a>
                         <a href="#" style="color: var(--text-tertiary);">LinkedIn</a>
@@ -434,23 +488,34 @@
                 </div>
                 <div class="cu-footer-col">
                     <h4 style="margin-bottom: 1rem; color: var(--text-primary);">Platform</h4>
-                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">AgentBoard</a>
-                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">AgentDocs</a>
-                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">AOR Database</a>
-                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">OpenClaw VM</a>
+                    <a href="#"
+                        style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">AgentBoard</a>
+                    <a href="#"
+                        style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">AgentDocs</a>
+                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">AOR
+                        Database</a>
+                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">OpenClaw
+                        VM</a>
                 </div>
                 <div class="cu-footer-col">
                     <h4 style="margin-bottom: 1rem; color: var(--text-primary);">Catalog</h4>
-                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">SEO Expert</a>
-                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">Video Editor</a>
-                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">Sales SDR</a>
-                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">Data Analyst</a>
+                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">SEO
+                        Expert</a>
+                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">Video
+                        Editor</a>
+                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">Sales
+                        SDR</a>
+                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">Data
+                        Analyst</a>
                 </div>
                 <div class="cu-footer-col">
                     <h4 style="margin-bottom: 1rem; color: var(--text-primary);">Resources</h4>
-                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">Documentation</a>
-                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">SOUL.md Guide</a>
-                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">API Reference</a>
+                    <a href="#"
+                        style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">Documentation</a>
+                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">SOUL.md
+                        Guide</a>
+                    <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">API
+                        Reference</a>
                 </div>
                 <div class="cu-footer-col">
                     <h4 style="margin-bottom: 1rem; color: var(--text-primary);">Company</h4>
@@ -459,7 +524,8 @@
                     <a href="#" style="color: var(--text-secondary); display:block; margin-bottom:0.75rem;">Contact</a>
                 </div>
             </div>
-            <div class="cu-footer-bottom border-top" style="margin-top: 4rem; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center;">
+            <div class="cu-footer-bottom border-top"
+                style="margin-top: 4rem; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center;">
                 <div class="copyright" style="color: var(--text-tertiary);">© 2026 OPVS, Inc. All rights reserved.</div>
                 <div class="legal" style="display:flex; gap:2rem;">
                     <a href="#" style="color: var(--text-tertiary);">Privacy Policy</a>
@@ -471,4 +537,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

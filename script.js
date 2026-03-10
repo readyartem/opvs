@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             opacity: 1,
             ease: "power2.inOut"
         });
-        
+
         // Fade out the giant background text quickly
         tl.to('#massive-bg-text', {
             opacity: 0,
@@ -70,21 +70,21 @@ document.addEventListener('DOMContentLoaded', () => {
             duration: 0.2
         }, 0.05);
     }
-    
+
     // Interactive Accordion Pills Logic
     const interactivePills = document.querySelectorAll('.interactive-pill');
-    
+
     interactivePills.forEach(pill => {
         pill.addEventListener('click', (e) => {
             // Check if this pill is already active
             const isActive = pill.classList.contains('active');
-            
+
             // Close all pills first in that specific column list, allowing one per side
             const parentList = pill.closest('.power-list');
             if (parentList) {
                 parentList.querySelectorAll('.interactive-pill').forEach(p => p.classList.remove('active'));
             }
-            
+
             // If it wasn't active, activate it
             if (!isActive) {
                 pill.classList.add('active');
@@ -95,32 +95,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Stats Count-Up Animation ---
     const statsSection = document.getElementById('stats-bar');
     const statNumbers = document.querySelectorAll('.stat-number');
-    
+
     if (statsSection && statNumbers.length > 0) {
         let hasAnimated = false;
-        
+
         const countUp = (el) => {
             const targetText = el.innerText;
             // Extract just the numbers to count up to, but remember the rest
             const targetNum = parseInt(targetText.replace(/,/g, '').replace(/[^0-9]/g, ''));
             if (isNaN(targetNum)) return;
-            
+
             const suffix = targetText.replace(/[0-9,]/g, '');
             const duration = 1500; // 1.5s
             const frameDuration = 1000 / 60;
             const totalFrames = Math.round(duration / frameDuration);
             let frame = 0;
-            
+
             const easeOutQuart = t => 1 - (--t) * t * t * t;
-            
+
             const counter = setInterval(() => {
                 frame++;
                 const progress = easeOutQuart(frame / totalFrames);
                 const currentNum = Math.round(targetNum * progress);
-                
+
                 // Format with commas
                 el.innerText = currentNum.toLocaleString() + suffix;
-                
+
                 if (frame === totalFrames) {
                     clearInterval(counter);
                     el.innerText = targetText; // Ensure exact final text
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         }, { threshold: 0.5 });
-        
+
         observer.observe(statsSection);
     }
 
@@ -147,14 +147,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroSection = document.getElementById('top-scroll-hero');
     const characterWrapper = document.getElementById('giant-character-wrapper');
     const parallaxInner = document.getElementById('parallax-inner');
-    
+
     if (heroSection && parallaxInner) {
         // Create performant GSAP setters for X and Y decoupled from the scroll pin wrapper
-        const xTo = gsap.quickTo(parallaxInner, "x", {duration: 0.8, ease: "power3"});
-        const yTo = gsap.quickTo(parallaxInner, "y", {duration: 0.8, ease: "power3"});
-        
+        const xTo = gsap.quickTo(parallaxInner, "x", { duration: 0.8, ease: "power3" });
+        const yTo = gsap.quickTo(parallaxInner, "y", { duration: 0.8, ease: "power3" });
+
         // Define total subtle movement range in pixels
-        const movementRange = 30; 
+        const movementRange = 30;
 
         window.addEventListener("mouseleave", () => {
             // Smoothly return to center when mouse leaves
@@ -170,36 +170,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 yTo(0);
                 return;
             }
-            
+
             // Calculate mouse position relative to the center of the viewport
             const { clientX, clientY } = e;
             const centerX = window.innerWidth / 2;
             const centerY = window.innerHeight / 2;
-            
+
             // Normalize distance from center (-1 to 1)
             const normalizedX = (clientX - centerX) / centerX;
             const normalizedY = (clientY - centerY) / centerY;
-            
+
             // Calculate final pixel targets (increased range for better visibility)
             const targetX = normalizedX * Number(60);
             const targetY = normalizedY * Number(60);
-            
+
             // Apply smoothly via GSAP quickTo
             xTo(targetX);
             yTo(targetY);
+        });
+    }
+
     // --- Catalog Slider Navigation ---
     const catScroller = document.getElementById('catalog-scroller');
     const catPrev = document.getElementById('cat-prev');
     const catNext = document.getElementById('cat-next');
 
-    if(catScroller && catPrev && catNext) {
+    if (catScroller && catPrev && catNext) {
         // Approximate width of a card (320px) + gap (1.5rem = 24px)
         const scrollAmount = 350;
-        
+
         catPrev.addEventListener('click', () => {
             catScroller.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
         });
-        
+
         catNext.addEventListener('click', () => {
             catScroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         });
