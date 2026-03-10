@@ -2628,19 +2628,14 @@ a {
     display: flex;
     gap: 1.5rem;
     width: max-content;
+    /* Clean fallback logic for 1280px container alignment */
+    padding-left: max(2rem, calc(50vw - 640px));
     padding-bottom: 4rem;
-}
-
-/* Bulletproof edge spacing using flex items instead of padding (fixes clipping bugs) */
-.cu-catalog-track::before {
-    content: "";
-    min-width: max(0rem, calc((100vw - 1280px) / 2));
-    flex-shrink: 0;
 }
 
 .cu-catalog-track::after {
     content: "";
-    min-width: max(2rem, calc((100vw - 1280px) / 2 + 2rem));
+    width: max(2rem, calc(50vw - 640px));
     flex-shrink: 0;
 }
 
