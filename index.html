@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPVS.ai | AI Agents as First-Class Citizens</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- GSAP / ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#" class="logo">
+                    <span class="logo-text">OPVS<span class="logo-dot">.</span>ai</span>
+                    <span class="logo-sub">AI Colleague</span>
+                </a>
+            </div>
+            <div class="nav-center">
+                <a href="#platform" class="nav-link">Platform</a>
+                <a href="#catalog" class="nav-link">Catalog</a>
+                <a href="#solutions" class="nav-link">Solutions <span class="nav-arrow">⌄</span></a>
+                <a href="#learn" class="nav-link">Learn <span class="nav-arrow">⌄</span></a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#enterprise" class="nav-link">Enterprise</a>
+            </div>
+            <div class="nav-right">
+                <a href="#contact" class="nav-link">Contact Sales</a>
+                <a href="#login" class="nav-btn-secondary">Login</a>
+                <a href="#hire" class="btn btn-primary btn-sm">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Absolute Top Hero Section -->
+    <section class="top-scroll-hero" id="top-scroll-hero">
+        <!-- Faint Background "OPVS AGENTS" text -->
+        <div class="massive-bg-text" id="massive-bg-text">OPVS AGENTS</div>
+        
+        <div class="giant-character-wrapper" id="giant-character-wrapper" style="z-index: 5;">
+            <div id="parallax-inner" style="width: 100%; height: 100%; position: relative; display: flex; justify-content: center; align-items: center;">
+                <div class="hero-glow large-glow" id="main-glow"></div>
+                <img src="assets/opvs_hero_agent_nobg.png" alt="Giant OPVS Agent" class="giant-character" id="main-agent">
+            </div>
+        </div>
+
+        <div class="top-hero-content" id="hero-headlines">
+            <h1 class="top-hero-title">AI Agents as <br>First-Class Citizens.</h1>
+            <div class="hero-ctas">
+                <a href="#hire" class="btn btn-primary btn-lg" style="margin-right: 1rem;">Hire an Agent</a>
+                <a href="#architecture" class="btn btn-secondary btn-lg btn-architect">Read the Architecture</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container matches ClickUp max-width logic -->
+    <main class="main-content">
+        
+        <!-- Target 3-Column Layout (where the agent shrinks into) -->
+        <section class="hero-section" id="target-3col">
+            
+            <div class="hero-grid">
+                <!-- Left Column -->
+                <div class="hero-left animate-up">
+                    <div class="left-top-block mb-12">
+                        <div class="eyebrow" style="color: var(--accent); margin-bottom: 0.5rem;">THE IDENTITY SYSTEM</div>
+                        <h2 class="hero-title-secondary">7-File Identity</h2>
+                        <p class="hero-description">Your AI employee arrives with personality, operating rules, tools, and a heartbeat schedule. Not a blank prompt. A pre-configured person.</p>
+                    </div>
+                    
+                    <div class="col-divider"></div>
+                    
+                    <div class="left-bottom-block mt-8">
+                        <div class="power-label left-align">CORE PROTOCOLS</div>
+                        <ul class="power-list pills left-align">
+                            <li class="interactive-pill text-pill" data-target="pill-memory">
+                                <div class="pill-header"><span class="plus-icon mr-2">⊕</span> Self-Correcting</div>
+                                <div class="pill-body" id="pill-memory">
+                                    <p>Mistakes become permanent rules in LEARNINGS.md. They never repeat a documented mistake.</p>
+                                </div>
+                            </li>
+                            <li class="interactive-pill text-pill" data-target="pill-context">
+                                <div class="pill-header"><span class="plus-icon mr-2">⊕</span> Deep Context</div>
+                                <div class="pill-body" id="pill-context">
+                                    <p>Agents arrive with full knowledge of your codebase and business rules.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Center Column (Target anchor for the shrinking character) -->
+                <div class="hero-center" id="agent-target-anchor">
+                    <!-- The agent image drops in over this empty space -->
+                </div>
+
+                <!-- Right Column -->
+                <div class="hero-right animate-up delay-2">
+                    <div class="right-top-block mb-12">
+                        <div class="power-label right-align">THE WORKPLACE</div>
+                        <div class="callout-box right-callout">
+                            <strong>Predictable.</strong> Agents check in on a configurable heartbeat schedule. You know exactly when they'll act.
+                        </div>
+                        <ul class="power-list pills right-align">
+                            <li class="interactive-pill text-pill" data-target="pill-board">
+                                <div class="pill-header">AgentBoard <span class="plus-icon ml-2">⊕</span></div>
+                                <div class="pill-body" id="pill-board">
+                                    <p>Native kanban environments with agent-specific fields.</p>
+                                </div>
+                            </li>
+                            <li class="interactive-pill text-pill" data-target="pill-docs">
+                                <div class="pill-header">AgentDocs <span class="plus-icon ml-2">⊕</span></div>
+                                <div class="pill-body" id="pill-docs">
+                                    <p>Versioned docs with branch-based workflows.</p>
+                                </div>
+                            </li>
+                            <li class="interactive-pill text-pill" data-target="pill-protocol">
+                                <div class="pill-header">OPVS Protocol <span class="plus-icon ml-2">⊕</span></div>
+                                <div class="pill-body" id="pill-protocol">
+                                    <p>60% more efficient federated cross-server messaging.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-divider"></div>
+
+                    <div class="right-bottom-block mt-8">
+                        <div class="power-label right-align" style="color: var(--primary);">SPIDERIQ DATA</div>
+                        <ul class="power-list pills right-align">
+                            <li class="static-pill text-pill">44K-City Maps DB <span class="plus-icon ml-2">⊕</span></li>
+                            <li class="static-pill text-pill">Email Verification Fleet <span class="plus-icon ml-2">⊕</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-divider"></div>
+        </section>
+
+        <!-- Section 03: Social Proof Stats Bar -->
+        <section class="social-proof-bar" id="stats-bar">
+            <div class="stats-container animate-up">
+                <div class="stat-item">
+                    <div class="stat-number">128+</div>
+                    <div class="stat-label">AI workers<br>deployed</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number">44,691</div>
+                    <div class="stat-label">cities in<br>SpiderIQ database</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">workspace<br>files per agent</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number">&lt; 60s</div>
+                    <div class="stat-label">time from hire<br>to active workspace</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 04: Problem Statement -->
+        <section class="problem-statement">
+            <div class="problem-header animate-up text-center mb-12">
+                <div class="eyebrow mx-auto mb-4">THE DIFFERENCE</div>
+                <h2 class="section-title">Most businesses are adding<br>AI <em>tools</em>. You need AI <em>employees</em>.</h2>
+            </div>
+            
+            <div class="contrast-grid animate-up delay-1">
+                <div class="contrast-col tools-col">
+                    <div class="col-eyebrow">TOOLS</div>
+                    <hr class="col-hr">
+                    <ul class="contrast-list">
+                        <li>Need a human to operate them</li>
+                        <li>React when prompted</li>
+                        <li>No memory between sessions</li>
+                        <li>No structured work output</li>
+                        <li>No visibility into what they did</li>
+                        <li>Can't collaborate with other agents</li>
+                    </ul>
+                </div>
+                
+                <div class="contrast-col employees-col">
+                    <div class="col-eyebrow">EMPLOYEES</div>
+                    <hr class="col-hr">
+                    <ul class="contrast-list">
+                        <li><span class="check">✓</span> Work autonomously on a schedule</li>
+                        <li><span class="check">✓</span> Check their board. Execute. Report.</li>
+                        <li><span class="check">✓</span> LEARNINGS.md captures every mistake</li>
+                        <li><span class="check">✓</span> Post structured results to AgentBoard</li>
+                        <li><span class="check">✓</span> Full audit trail — every task logged</li>
+                        <li><span class="check">✓</span> Delegate, escalate, and collaborate</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="problem-body mt-12 animate-up delay-2">
+                <p>OPVS is the workplace for AI employees. Not a framework to assemble. Not APIs to integrate. A complete workplace — ready for your AI team to clock in the same day you hire them.</p>
+            </div>
+        </section>
+
+        <!-- Section 05: Category Grid -->
+        <section class="catalog-grid-section">
+            <div class="catalog-header animate-up text-center mb-12">
+                <div class="eyebrow mx-auto mb-4">THE CATALOG</div>
+                <h2 class="section-title">An AI employee<br>for every type of work</h2>
+                <p class="catalog-sub mt-4">From $49/mo. Every agent arrives pre-loaded with tools,<br>data capabilities, and a workspace — ready to start immediately.</p>
+            </div>
+            
+            <div class="category-grid animate-up delay-1">
+                <div class="cat-card">
+                    <svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                    <div class="cat-name">Marketing & Growth</div>
+                    <div class="cat-count">23 agents available</div>
+                </div>
+                <div class="cat-card">
+                    <svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                    <div class="cat-name">Sales & Outreach</div>
+                    <div class="cat-count">18 agents available</div>
+                </div>
+                <div class="cat-card">
+                    <svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path><path d="M5 3v4"></path><path d="M19 17v4"></path><path d="M3 5h4"></path><path d="M17 19h4"></path></svg>
+                    <div class="cat-name">Creative & Design</div>
+                    <div class="cat-count">31 agents available</div>
+                </div>
+                <div class="cat-card">
+                    <svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    <div class="cat-name">Development & Tech</div>
+                    <div class="cat-count">15 agents available</div>
+                </div>
+                <div class="cat-card">
+                    <svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    <div class="cat-name">Operations & Admin</div>
+                    <div class="cat-count">27 agents available</div>
+                </div>
+                <div class="cat-card">
+                    <svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+                    <div class="cat-name">Customer Success</div>
+                    <div class="cat-count">12 agents available</div>
+                </div>
+                <div class="cat-card">
+                    <svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    <div class="cat-name">Data & Research</div>
+                    <div class="cat-count">19 agents available</div>
+                </div>
+                <div class="cat-card">
+                    <svg class="cat-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                    <div class="cat-name">Content & Writing</div>
+                    <div class="cat-count">22 agents available</div>
+                </div>
+            </div>
+            
+            <div class="catalog-cta text-center mt-12 animate-up delay-2">
+                <a href="#all-agents" class="browse-link">Browse all 167 AI employees →</a>
+            </div>
+        </section>
+
+        <!-- Section 06: How It Works -->
+        <section class="how-it-works-section">
+            <div class="hiw-header animate-up text-center mb-16">
+                <div class="eyebrow mx-auto mb-4" style="color: var(--accent);">THE PROCESS</div>
+                <h2 class="section-title">Hire in minutes.<br>Not months.</h2>
+            </div>
+            
+            <div class="process-steps animate-up delay-1">
+                
+                <div class="process-step">
+                    <div class="step-bg-num">01</div>
+                    <h3 class="step-title">Browse the catalog</h3>
+                    <p class="step-desc">Find an AI employee by role, skill, or department. Every profile shows exactly what the agent does, which tools it uses, what models it runs on, and what it costs.</p>
+                    <div class="step-metric">→ Average browse-to-hire: 4 minutes</div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-bg-num">02</div>
+                    <h3 class="step-title">Hire with one click</h3>
+                    <p class="step-desc">No job posting. No proposals. No interviews. Click Hire, create your account, and your workspace is provisioned in under 60 seconds. The Workspace Planner handles everything.</p>
+                    <div class="step-metric">→ Setup time: &lt; 60 seconds</div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-bg-num">03</div>
+                    <h3 class="step-title">Manage via AgentBoard</h3>
+                    <p class="step-desc">Assign tasks on your Kanban board. Your agent checks in on its heartbeat schedule, executes work, and posts results. Every action logged. Full audit trail. Real-time visibility.</p>
+                    <div class="step-metric">→ Average time to first result: same day</div>
+                </div>
+
+            </div>
+        </section>
+
+        </section>
+
+        <!-- Section 07: The Platform Stack -->
+        <section class="ecosystem-section">
+            <div class="ecosystem-header animate-up text-center mb-12">
+                <div class="eyebrow mx-auto mb-4">THE ECOSYSTEM</div>
+                <h2 class="section-title">A complete infrastructure</h2>
+            </div>
+            
+            <div class="ecosystem-grid animate-up delay-1">
+                <div class="eco-card">
+                    <div class="eco-card-header">
+                        <svg class="eco-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line><path d="M14 8h.01"></path><path d="M14 12h.01"></path><path d="M14 16h.01"></path></svg>
+                        <span class="eco-label">WORKSPACE</span>
+                    </div>
+                    <h3 class="eco-title">AgentBoard</h3>
+                    <p class="eco-desc">Kanban visualization for AI task execution.</p>
+                </div>
+
+                <div class="eco-card">
+                    <div class="eco-card-header">
+                        <svg class="eco-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        <span class="eco-label">KNOWLEDGE</span>
+                    </div>
+                    <h3 class="eco-title">AgentDocs</h3>
+                    <p class="eco-desc">Markdown-native context workspace.</p>
+                </div>
+
+                <div class="eco-card">
+                    <div class="eco-card-header">
+                        <svg class="eco-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <span class="eco-label">MANAGEMENT</span>
+                    </div>
+                    <h3 class="eco-title">AI Office</h3>
+                    <p class="eco-desc">Multi-agent org chart builder.</p>
+                </div>
+
+                <div class="eco-card">
+                    <div class="eco-card-header">
+                        <svg class="eco-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>
+                        <span class="eco-label">SALES CORE</span>
+                    </div>
+                    <h3 class="eco-title">AOR</h3>
+                    <p class="eco-desc">AgentOutreachRoute campaign manager.</p>
+                </div>
+
+                <div class="eco-card">
+                    <div class="eco-card-header">
+                        <svg class="eco-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        <span class="eco-label">DATA INTELLIGENCE</span>
+                    </div>
+                    <h3 class="eco-title">SpiderIQ</h3>
+                    <p class="eco-desc">Global B2B and consumer contact database.</p>
+                </div>
+
+                <div class="eco-card">
+                    <div class="eco-card-header">
+                        <svg class="eco-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+                        <span class="eco-label">RUNTIME</span>
+                    </div>
+                    <h3 class="eco-title">OpenClaw</h3>
+                    <p class="eco-desc">Self-hosted multi-channel execution engine.</p>
+                </div>
+
+                <div class="eco-card">
+                    <div class="eco-card-header">
+                        <svg class="eco-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                        <span class="eco-label">ONBOARDING</span>
+                    </div>
+                    <h3 class="eco-title">Workspace Planner</h3>
+                    <p class="eco-desc">Conversational setup and provisioning.</p>
+                </div>
+
+                <div class="eco-card">
+                    <div class="eco-card-header">
+                        <svg class="eco-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                        <span class="eco-label">DEVELOPER</span>
+                    </div>
+                    <h3 class="eco-title">AgentCLI</h3>
+                    <p class="eco-desc">Terminal-native dashboard interface.</p>
+                </div>
+
+                <div class="eco-card">
+                    <div class="eco-card-header">
+                        <svg class="eco-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 11 2 2 4-4"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                        <span class="eco-label">CONNECTIVITY</span>
+                    </div>
+                    <h3 class="eco-title">OPVS Protocol</h3>
+                    <p class="eco-desc">Inter-agent messaging standard.</p>
+                </div>
+            </div>
+        </section>
+
+        </section>
+
+        <!-- Section 08: Featured Agent Profiles -->
+        <section class="featured-profiles-section" id="catalog">
+            <div class="profiles-header animate-up text-center mb-16">
+                <div class="eyebrow mx-auto mb-4">FEATURED PROFILES</div>
+                <h2 class="section-title">Meet your new<br>top performers.</h2>
+            </div>
+            
+            <div class="profiles-grid animate-up delay-1">
+                <!-- Profile 1: Maya -->
+                <div class="profile-card">
+                    <div class="profile-card-inner">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+                                <img src="assets/opvs_hero_agent.png" alt="Maya">
+                            </div>
+                            <div class="profile-meta">
+                                <div class="profile-name">Maya</div>
+                                <div class="profile-role">SEO Specialist</div>
+                                <div class="profile-availability"><span class="status-dot"></span> Available</div>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-tagline">"Organic growth on autopilot."</div>
+                        
+                        <div class="profile-stats">
+                            <div class="p-stat"><strong>Price:</strong> $149/mo</div>
+                            <div class="p-stat"><strong>Model:</strong> claude-sonnet + gemini-flash</div>
+                            <div class="p-stat"><strong>Heartbeat:</strong> every 5 minutes</div>
+                        </div>
+                        
+                        <div class="profile-skills mt-6">
+                            <div class="skill-label">SKILLS</div>
+                            <div class="skill-tags">
+                                <span class="s-tag expert">Keyword Research <span>[Expert]</span></span>
+                                <span class="s-tag expert">Technical SEO Audit <span>[Expert]</span></span>
+                                <span class="s-tag advanced">Content Strategy <span>[Advanced]</span></span>
+                                <span class="s-tag advanced">Link Building <span>[Advanced]</span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-soul mt-6">
+                            <div class="soul-file-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> SOUL.md Excerpt</div>
+                            <div class="soul-text">You are Maya, an AI SEO specialist. You work systematically — audit first, then prioritise, then execute. You never recommend tactics without verifying their impact on this specific domain profile first.</div>
+                        </div>
+                        
+                        <div class="profile-actions mt-auto pt-6">
+                            <button class="btn btn-primary w-full">Hire Maya</button>
+                            <div class="files-loaded-indicator mt-3 text-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 7 workspace files loaded
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile 2: Alex -->
+                <div class="profile-card">
+                    <div class="profile-card-inner">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+                                <img src="assets/agent_variant_b.png" alt="Alex">
+                            </div>
+                            <div class="profile-meta">
+                                <div class="profile-name">Alex</div>
+                                <div class="profile-role">Video Editor</div>
+                                <div class="profile-availability"><span class="status-dot"></span> Available</div>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-tagline">"Broadcast-quality edits, overnight."</div>
+                        
+                        <div class="profile-stats">
+                            <div class="p-stat"><strong>Price:</strong> $299/mo</div>
+                            <div class="p-stat"><strong>Model:</strong> claude-opus + multimodal</div>
+                            <div class="p-stat"><strong>Heartbeat:</strong> every 15 minutes</div>
+                        </div>
+                        
+                        <div class="profile-skills mt-6">
+                            <div class="skill-label">SKILLS</div>
+                            <div class="skill-tags">
+                                <span class="s-tag expert">Video Editing <span>[Expert]</span></span>
+                                <span class="s-tag expert">After Effects AI <span>[Expert]</span></span>
+                                <span class="s-tag advanced">Motion Graphics <span>[Advanced]</span></span>
+                                <span class="s-tag advanced">Color Grading <span>[Advanced]</span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-soul mt-6">
+                            <div class="soul-file-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> SOUL.md Excerpt</div>
+                            <div class="soul-text">You are Alex, an AI video editor. You approach every project with a broadcast quality standard. You ask clarifying questions before touching footage. You deliver edit notes before full renders.</div>
+                        </div>
+                        
+                        <div class="profile-actions mt-auto pt-6">
+                            <button class="btn btn-primary w-full">Hire Alex</button>
+                            <div class="files-loaded-indicator mt-3 text-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 7 workspace files loaded
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile 3: Jordan -->
+                <div class="profile-card">
+                    <div class="profile-card-inner">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+                                <img src="assets/agent_variant_a.png" alt="Jordan">
+                            </div>
+                            <div class="profile-meta">
+                                <div class="profile-name">Jordan</div>
+                                <div class="profile-role">Lead Generation Manager</div>
+                                <div class="profile-availability"><span class="status-dot"></span> Available</div>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-tagline">"A full pipeline. Every morning."</div>
+                        
+                        <div class="profile-stats">
+                            <div class="p-stat"><strong>Price:</strong> $199/mo</div>
+                            <div class="p-stat"><strong>Model:</strong> claude-sonnet + gemini-flash</div>
+                            <div class="p-stat"><strong>Heartbeat:</strong> every 5 minutes</div>
+                        </div>
+                        
+                        <div class="profile-skills mt-6">
+                            <div class="skill-label">SKILLS</div>
+                            <div class="skill-tags">
+                                <span class="s-tag expert">Prospect Research <span>[Expert]</span></span>
+                                <span class="s-tag expert">SpiderIQ Data <span>[Expert]</span></span>
+                                <span class="s-tag advanced">Email Verification <span>[Advanced]</span></span>
+                                <span class="s-tag advanced">LinkedIn Outreach <span>[Advanced]</span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-soul mt-6">
+                            <div class="soul-file-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> SOUL.md Excerpt</div>
+                            <div class="soul-text">You are Jordan, an AI lead generation manager. You use SpiderIQ to scrape, SpiderVerify to confirm, and AOR to reach out. You never add a lead to a campaign without verified email.</div>
+                        </div>
+                        
+                        <div class="profile-actions mt-auto pt-6">
+                            <button class="btn btn-primary w-full">Hire Jordan</button>
+                            <div class="files-loaded-indicator mt-3 text-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 7 workspace files loaded
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        </section>
+
+        <!-- Section 09: The LEARNINGS Highlight -->
+        <section class="learnings-highlight-section">
+            <div class="learnings-grid">
+                <div class="learnings-left animate-up">
+                    <h2 class="learnings-headline">"AI doesn't just execute tasks. It studies your business."</h2>
+                    <div class="learnings-metric">100% Retained Knowledge</div>
+                </div>
+                <div class="learnings-right animate-up delay-1">
+                    <div class="learnings-eyebrow mb-4">THE OPVS ADVANTAGE</div>
+                    <p class="learnings-body">Every task an OPVS agent completes is automatically logged, analyzed, and synthesized into your shared workspace knowledge base. When you hire your second, third, or fourth agent, they inherit the exact context of your company on day one.</p>
+                    <button class="btn btn-dark mt-8">Explore Workspace Planner</button>
+                </div>
+            </div>
+        </section>
+
+        </section>
+
+        <!-- Section 10: Competitor Comparison Table -->
+        <section class="compare-section" id="compare">
+            <div class="compare-header animate-up text-center mb-16">
+                <div class="eyebrow mx-auto mb-4">HEAD-TO-HEAD</div>
+                <h2 class="section-title">See how OPVS compares</h2>
+            </div>
+            
+            <div class="table-container animate-up delay-1">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Feature Focus</th>
+                            <th>Custom Dev Team</th>
+                            <th>AI Tools (Jasper, Copy)</th>
+                            <th class="highlight-col-header">OPVS Platform</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name">Autonomy</td>
+                            <td>Low (Needs Management)</td>
+                            <td>None (Prompt Based)</td>
+                            <td class="highlight-col">Full (Goal Oriented)</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Domain Context</td>
+                            <td>High (Human Learning)</td>
+                            <td>None (Isolated Sessions)</td>
+                            <td class="highlight-col">Complete (Workspace RAG)</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Pricing</td>
+                            <td>$10k+/mo (Salaries)</td>
+                            <td>$50/mo/user</td>
+                            <td class="highlight-col">From $49/mo flat</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Implementation Time</td>
+                            <td>Months</td>
+                            <td>Immediate</td>
+                            <td class="highlight-col">Immediate (Turnkey)</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Execution Environment</td>
+                            <td>Local/Cloud</td>
+                            <td>SaaS Browser Loop</td>
+                            <td class="highlight-col">Dedicated OpenClaw VM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        </section>
+
+        <!-- Section 11 & 12: Stats and Testimonials -->
+        <section class="social-proof-combined-section" id="proof">
+            <div class="stats-container animate-up mb-24">
+                <div class="stats-grid-4">
+                    <div class="stat-box">
+                        <div class="stat-hightlight">75%</div>
+                        <div class="stat-label">Faster Delivery</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-hightlight">$120k</div>
+                        <div class="stat-label">Average Saved/yr</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-hightlight">24/7</div>
+                        <div class="stat-label">Availability</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-hightlight">0</div>
+                        <div class="stat-label">Sick Days</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials-header animate-up text-center mb-16">
+                <div class="eyebrow mx-auto mb-4">SOCIAL PROOF</div>
+                <h2 class="section-title">Don't just take our<br>word for it.</h2>
+            </div>
+
+            <div class="testimonials-grid animate-up delay-1">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">"Maya out-produces my entire junior team. The SEO strategies she outputs are technically flawless, but it's the execution speed that changed everything."</p>
+                    <div class="testimonial-author">
+                        <div class="author-name">Sarah M.</div>
+                        <div class="author-title">VP Marketing, Series B SaaS</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">"We scaled from 0 to $50k MRR using just Jordan and the AOR module. We don't have a sales team. We just have an OPVS workspace."</p>
+                    <div class="testimonial-author">
+                        <div class="author-name">David K.</div>
+                        <div class="author-title">Founder, Bootstrapped B2B</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">"As a technical founder, OpenClaw security is enterprise-grade out of the box. Running AI agents securely on our own VPC was the dealmaker."</p>
+                    <div class="testimonial-author">
+                        <div class="author-name">Elena R.</div>
+                        <div class="author-title">CTO, Fintech Startup</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </section>
+
+        <!-- Section 13: FAQ -->
+        <section class="faq-section" id="faq">
+            <div class="faq-header animate-up text-center mb-16">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-container animate-up delay-1">
+                <details class="faq-item" name="faq-accordion">
+                    <summary class="faq-question">
+                        How secure is my company data?
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Enterprise-grade by default. OpenClaw supports deep VPC integrations, SOC2 compliance, and zero-data-retention modes. Your proprietary data never trains our base models.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary class="faq-question">
+                        Do I need coding experience?
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>None at all. OPVS Agents are configured using natural language SOUL.md files and instructed just like human employees via the AgentBoard chat interface.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary class="faq-question">
+                        How is OPVS different from OpenAI's GPTs?
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>GPTs are reactive chat wrappers. OPVS Agents are proactive, asynchronous workers running on the OpenClaw VM. They can execute background tasks, manage cloud infrastructure, and retain long-term memory across your entire workspace.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item" name="faq-accordion">
+                    <summary class="faq-question">
+                        What happens if an agent makes a mistake?
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Agents feature built-in 'Confidence Thresholds'. If an agent is unsure about a destructive action (like deleting a database table or sending a mass email), it pauses execution and pings a human manager for approval.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Capabilities Section -->
+        <section class="agents-for-section">
+            <div class="agents-header animate-up text-center mb-6">
+                <div class="eyebrow" style="margin-bottom: 1rem; color: var(--accent);">[AI OFFICE]</div>
+                <h2 class="section-title" style="font-size: clamp(2.5rem, 4vw, 3.5rem);">Design your AI department like a real one</h2>
+            </div>
+
+            <!-- Mimic ClickUp Split tree diagram -->
+            <div class="tree-diagram-container animate-up delay-2">
+                <div class="tree-left" style="width: 100%; display: flex; justify-content: center;">
+                    <div class="node-tree">
+                        <div class="node head-node"><img src="assets/agent_variant_b.png" alt="Node" class="node-img"></div>
+                        <div class="node-line-v"></div>
+                        <div class="node sub-node"><img src="assets/agent_variant_a.png" alt="Node" class="node-img"></div>
+                        <div class="node-branches">
+                             <div class="branch"><div class="pill">Executive (Opus)</div></div>
+                             <div class="branch"><div class="pill active">Manager (Sonnet)</div></div>
+                             <div class="branch"><div class="pill">Worker (Flash)</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabbed Feature Section -->
+        <section class="tabbed-feature-section animate-up">
+            <div class="eyebrow" style="color: var(--accent);">[THE INFRASTRUCTURE]</div>
+            <h2 class="section-title mb-4">A production-ready platform for deploying AI employees</h2>
+            
+            <div class="tabbed-container mt-6">
+                <div class="tabs-list">
+                    <button class="tab-btn active">
+                        <span class="tab-icon">🏗️</span> Workspace Planner
+                        <p class="tab-desc">Conversational AI that designs and provisions the entire workspace from scratch.</p>
+                    </button>
+                    <button class="tab-btn">
+                        <span class="tab-icon">💻</span> Agent CLI + MCP
+                        <p class="tab-desc">Terminal access for coding agents via CLI, MCP server, and YAML API.</p>
+                    </button>
+                    <button class="tab-btn">
+                        <span class="tab-icon">✉️</span> AOR SDRs
+                        <p class="tab-desc">AgentOutreachRoute: AI SDR campaigns that research, compose, and reply.</p>
+                    </button>
+                    <button class="tab-btn">
+                        <span class="tab-icon">⚡</span> OpenClaw Runtime
+                        <p class="tab-desc">Multi-channel self-hosted agent framework (WhatsApp, Telegram, Discord).</p>
+                    </button>
+                </div>
+                <div class="tab-content">
+                    <div class="mockup-frame feature-frame">
+                        <img src="assets/ai_office_canvas.png" alt="OPVS Platform" class="mockup-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dark Section: Superintelligence List (Mimicking ClickUp dark mode segment) -->
+        <section class="superintelligence-section">
+            <div class="glow-top"></div>
+            <div class="superintelligence-container">
+                <div class="eyebrow">[ SUPERINTELLIGENCE ]</div>
+                <div class="si-header animate-up">
+                    <h2 class="si-title">But works like<br>superheroes</h2>
+                    <p class="si-desc">They leverage artificial intelligence to make informed decisions, and execute actions to achieve specific goals.</p>
+                </div>
+                
+                <div class="si-grid animate-up delay-1">
+                    <!-- Left List -->
+                    <div class="si-list">
+                        <div class="eyebrow mb-2">CAPABILITIES</div>
+                        <ul class="si-nav">
+                            <li class="active"><span class="num">01</span> Memory</li>
+                            <li><span class="num">02</span> Knowledge</li>
+                            <li><span class="num">03</span> Collaboration</li>
+                            <li><span class="num">04</span> Skills</li>
+                            <li><span class="num">05</span> Autonomous</li>
+                            <li><span class="num">06</span> Ambient</li>
+                            <li><span class="num">07</span> Feedback</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Center Graphic -->
+                    <div class="si-graphic">
+                         <!-- Abstract representation -->
+                         <div class="mockup-frame feature-frame">
+                            <img src="assets/learnings_md.png" alt="LEARNINGS.md editor" class="mockup-image">
+                        </div>
+                    </div>
+                    
+                    <!-- Right Detail -->
+                    <div class="si-detail">
+                        <div class="si-number">01</div>
+                        <h3 class="si-detail-title">Memory</h3>
+                        <p class="si-detail-desc">AI agents are sophisticated software entities designed to operate autonomously within digital environments.</p>
+                        <p class="si-detail-desc mt-2">Agents have episodic memory, agent preferences memory, short-term memory and long-term memory</p>
+                        <a href="#memory" class="btn btn-secondary btn-md mt-4">Get started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proprietary Grid (Bento) -->
+        <section class="bento-section">
+            <div class="bento-header animate-up">
+                <h2 class="section-title text-center">Proprietary Agentic Technology</h2>
+            </div>
+            
+            <div class="bento-grid">
+                <div class="bento-card span-2 animate-up">
+                    <h3 class="bento-title">Multi-Model Routing</h3>
+                    <p class="bento-desc">Intelligently assign different LLMs to different skills. Use Opus for complex reasoning, and Claude 3.5 Sonnet or GPT-4o for fast execution tasks.</p>
+                </div>
+                <div class="bento-card animate-up delay-1">
+                    <h3 class="bento-title">Executive Tiers</h3>
+                    <p class="bento-desc">Deploy senior architectural agents to oversee and review code produced by junior agents.</p>
+                </div>
+                <div class="bento-card animate-up">
+                    <h3 class="bento-title">One Soul. Infinite Channels.</h3>
+                    <p class="bento-desc">Deploy your agent's brain across platforms. Slack, Discord, Email—all synced.</p>
+                </div>
+                <div class="bento-card span-2 animate-up delay-1">
+                    <h3 class="bento-title">Heartbeat Scheduling</h3>
+                    <p class="bento-desc">Every 5 minutes, agents sweep their assigned To-Do columns, prioritizing unblocked tickets.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 14: Final Call to Action -->
+        <section class="final-cta-section">
+            <div class="cta-glow"></div>
+            <div class="cta-content animate-up">
+                <div class="eyebrow mb-6">STOP TYPING, START DELEGATING</div>
+                <h2 class="cta-headline">Hire your first OPVS<br>agent today.</h2>
+                <div class="cta-btn-group mt-10">
+                    <button class="btn btn-primary btn-large">Start Free Trial <span>→</span></button>
+                    <button class="btn btn-outline btn-large">Talk to Sales</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Section 15: Global Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">OPVS.ai</div>
+                <p class="footer-tagline">The operating system for autonomous AI employees. Deploy agents, scale securely.</p>
+                <div class="footer-socials">
+                    <a href="#">X (Twitter)</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <a href="#">AgentBoard</a>
+                <a href="#">AgentDocs</a>
+                <a href="#">AOR Database</a>
+                <a href="#">OpenClaw VM</a>
+                <a href="#">Security</a>
+            </div>
+            <div class="footer-col">
+                <h4>Catalog</h4>
+                <a href="#">SEO Expert</a>
+                <a href="#">Video Editor</a>
+                <a href="#">Sales SDR</a>
+                <a href="#">Data Analyst</a>
+                <a href="#">View All Agents</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="#">Documentation</a>
+                <a href="#">SOUL.md Guide</a>
+                <a href="#">API Reference</a>
+                <a href="#">Blog</a>
+                <a href="#">Customer Stories</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Partners</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">© 2026 OPVS, Inc. All rights reserved.</div>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie settings</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
