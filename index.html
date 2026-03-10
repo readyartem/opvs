@@ -143,64 +143,77 @@
             </div>
             <div class="hero-divider"></div>
         </section>
-
         <!-- Block 3: Agents Catalog (ClickUp Clone) -->
         <section class="cu-catalog-section" id="catalog">
             <div class="cu-container">
-                <div class="cu-catalog-header">
-                    <h2 class="cu-section-title">Agents for...</h2>
-                    <p class="cu-section-subtitle">The world's only infinite agent catalog where every role is pre-loaded with tools, data capabilities, and a workspace — ready to start immediately.</p>
+                <div class="cu-catalog-header cu-slider-header">
+                    <div>
+                        <h2 class="cu-section-title">Agents for everything</h2>
+                        <p class="cu-section-subtitle">The world's only infinite agent catalog where anyone can create and customize agents for any type of work imaginable.</p>
+                    </div>
+                    <div class="cu-slider-nav">
+                        <button class="slider-arrow prev-arrow" id="cat-prev">←</button>
+                        <button class="slider-arrow next-arrow" id="cat-next">→</button>
+                    </div>
                 </div>
             </div>
             
-            <div class="cu-catalog-scroller">
+            <div class="cu-catalog-scroller" id="catalog-scroller">
                 <div class="cu-catalog-track">
                     <!-- Cards -->
                     <div class="cu-agent-card bg-orange">
                         <div class="cu-agent-card-header">
-                            <span class="card-icon">📈</span>
                             Marketing & Growth
                         </div>
-                        <img src="assets/agent_variant_a.png" alt="Marketing Agent" class="cu-agent-img">
+                        <div class="cu-agent-media">
+                            <img src="assets/agent_variant_a.png" alt="Marketing Agent" class="cu-agent-img static-img">
+                            <video src="assets/agent_variant_a.mp4" autoplay loop muted playsinline class="cu-agent-img animated-media"></video>
+                        </div>
                         <button class="cu-add-btn">+</button>
                     </div>
                     
                     <div class="cu-agent-card bg-blue">
                         <div class="cu-agent-card-header">
-                            <span class="card-icon">💬</span>
                             Sales & Outreach
                         </div>
-                        <img src="assets/agent_variant_b.png" alt="Sales Agent" class="cu-agent-img">
+                        <div class="cu-agent-media">
+                            <img src="assets/agent_variant_b.png" alt="Sales Agent" class="cu-agent-img static-img">
+                            <video src="assets/agent_variant_b.mp4" autoplay loop muted playsinline class="cu-agent-img animated-media"></video>
+                        </div>
                         <button class="cu-add-btn">+</button>
                     </div>
                     
                     <div class="cu-agent-card bg-green">
                         <div class="cu-agent-card-header">
-                            <span class="card-icon">💻</span>
                             Development & Tech
                         </div>
-                        <img src="assets/opvs_hero_agent.png" alt="Coding Agent" class="cu-agent-img">
+                        <div class="cu-agent-media">
+                            <img src="assets/agent_dev_dynamic.png" alt="Coding Agent" class="cu-agent-img static-img">
+                            <video src="assets/agent_dev_dynamic.mp4" autoplay loop muted playsinline class="cu-agent-img animated-media"></video>
+                        </div>
                         <button class="cu-add-btn">+</button>
                     </div>
                     
                     <div class="cu-agent-card bg-purple">
                         <div class="cu-agent-card-header">
-                            <span class="card-icon">🎨</span>
                             Creative & Design
                         </div>
-                        <img src="assets/agent_variant_a.png" alt="Designer Agent" class="cu-agent-img">
+                        <div class="cu-agent-media">
+                            <img src="assets/agent_creative_dynamic.png" alt="Designer Agent" class="cu-agent-img static-img">
+                            <video src="assets/agent_creative_dynamic.mp4" autoplay loop muted playsinline class="cu-agent-img animated-media"></video>
+                        </div>
                         <button class="cu-add-btn">+</button>
                     </div>
 
                     <div class="cu-agent-card bg-dark">
                         <div class="cu-agent-card-header">
-                            <span class="card-icon">⚙️</span>
                             Custom Agents
                         </div>
-                        <img src="assets/agent_variant_b.png" alt="Custom Agent" class="cu-agent-img" style="filter: grayscale(1) brightness(0.3); opacity: 0.5;">
-                        <div class="cu-custom-content">
-                            <button class="btn btn-secondary" style="border-radius: 100px; padding: 0.5rem 1rem; position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%); white-space: nowrap;">Create custom</button>
+                        <div class="cu-agent-media">
+                            <img src="assets/agent_custom_dynamic.png" alt="Custom Agent" class="cu-agent-img static-img" style="filter: grayscale(1) brightness(0.3); opacity: 0.5;">
+                            <video src="assets/agent_custom.mp4" autoplay loop muted playsinline class="cu-agent-img animated-media"></video>
                         </div>
+                        <button class="cu-add-btn" style="background:var(--text-primary); color:var(--bg-primary);">Create Custom</button>
                     </div>
                 </div>
             </div>

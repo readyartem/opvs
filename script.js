@@ -187,6 +187,21 @@ document.addEventListener('DOMContentLoaded', () => {
             // Apply smoothly via GSAP quickTo
             xTo(targetX);
             yTo(targetY);
+    // --- Catalog Slider Navigation ---
+    const catScroller = document.getElementById('catalog-scroller');
+    const catPrev = document.getElementById('cat-prev');
+    const catNext = document.getElementById('cat-next');
+
+    if(catScroller && catPrev && catNext) {
+        // Approximate width of a card (320px) + gap (1.5rem = 24px)
+        const scrollAmount = 350;
+        
+        catPrev.addEventListener('click', () => {
+            catScroller.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+        
+        catNext.addEventListener('click', () => {
+            catScroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         });
     }
 });

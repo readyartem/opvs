@@ -2303,11 +2303,44 @@ a {
     line-height: 1.5;
 }
 
+.cu-slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.cu-slider-nav {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 2rem;
+}
+
+.slider-arrow {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-arrow:hover {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+}
+
 .cu-catalog-scroller {
     width: 100%;
     overflow-x: auto;
     padding: 0 2rem 2rem; /* padding for the drop shadow if any */
     scrollbar-width: none; /* Firefox */
+    scroll-behavior: smooth;
 }
 
 .cu-catalog-scroller::-webkit-scrollbar {
@@ -2320,6 +2353,7 @@ a {
     width: max-content;
     padding-left: calc((100vw - var(--container-max)) / 2);
     padding-right: 2rem;
+    padding-bottom: 4rem; /* Buffer for staggered layout */
 }
 
 /* Fallback padding if screen is smaller than container */
@@ -2343,8 +2377,12 @@ a {
     cursor: pointer;
 }
 
+.cu-agent-card:nth-child(even) {
+    margin-top: 3rem;
+}
+
 .cu-agent-card:hover {
-    transform: translateY(-8px);
+    border-color: rgba(238, 191, 1, 0.4);
 }
 
 .cu-agent-card.bg-orange { background: #1f1410; border: 1px solid #3d2315; }
@@ -2370,18 +2408,43 @@ a {
     color: var(--accent); /* OPVS yellow */
 }
 
-.cu-agent-img {
+.cu-agent-media {
     position: absolute;
     bottom: 0;
     right: 0;
     width: 100%;
     height: 80%;
-    object-fit: cover;
-    object-position: bottom;
     z-index: 1;
     pointer-events: none;
+}
+
+.cu-agent-media .cu-agent-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
     mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    transition: opacity 0.5s ease;
+}
+
+.cu-agent-img.static-img {
+    opacity: 1;
+}
+
+.cu-agent-img.animated-media {
+    opacity: 0;
+}
+
+.cu-agent-card:hover .static-img {
+    opacity: 0;
+}
+
+.cu-agent-card:hover .animated-media {
+    opacity: 1;
 }
 
 .cu-add-btn {
