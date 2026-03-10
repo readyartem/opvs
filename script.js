@@ -231,28 +231,5 @@ document.addEventListener('DOMContentLoaded', () => {
         catNext.addEventListener('click', () => {
             catScroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         });
-
-        // --- Foolproof JS Padding Alignment ---
-        // Bypasses CSS `vw` scrollbar inconsistencies by calculating true DOM bounds
-        const catHeader = document.querySelector('.cu-catalog-header');
-        const catTrack = document.getElementById('catalog-track');
-        const catSpacer = document.getElementById('catalog-spacer-right');
-
-        const updateSliderPadding = () => {
-            if (!catHeader || !catTrack || !catSpacer) return;
-            // Get the exact X coordinate (left offset) of the constrained text header
-            const headerRect = catHeader.getBoundingClientRect();
-            // Apply it as exact pixel padding
-            const targetPadding = Math.max(32, headerRect.left);
-            catTrack.style.paddingLeft = `${targetPadding}px`;
-            catSpacer.style.width = `${targetPadding}px`;
-
-            // Re-check arrow states after layout shift
-            updateArrowStates();
-        };
-
-        // Initialize and bind to resize
-        updateSliderPadding();
-        window.addEventListener('resize', updateSliderPadding);
     }
 });

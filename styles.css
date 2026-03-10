@@ -2614,10 +2614,18 @@ a {
 .cu-catalog-scroller {
     width: 100%;
     overflow-x: auto;
-    padding: 0 0 2rem 0;
+    padding-bottom: 2rem;
     scrollbar-width: none;
     scroll-behavior: smooth;
-    display: block;
+    /* Bulletproof grid alignment engine avoiding flex padding bugs and 'vw' scrollbar bugs */
+    display: grid;
+    grid-template-columns:
+        minmax(2rem, calc(50% - 640px + 2rem)) max-content minmax(2rem, calc(50% - 640px + 2rem));
+}
+
+.cu-catalog-scroller::before,
+.cu-catalog-scroller::after {
+    content: "";
 }
 
 .cu-catalog-scroller::-webkit-scrollbar {
@@ -2625,17 +2633,10 @@ a {
 }
 
 .cu-catalog-track {
+    grid-column: 2;
     display: flex;
     gap: 1.5rem;
-    width: max-content;
     padding-bottom: 4rem;
-    /* transition padding for smooth resize adjustments */
-    transition: padding-left 0.2s ease;
-}
-
-.cu-spacer-right {
-    flex-shrink: 0;
-    transition: width 0.2s ease;
 }
 
 .cu-agent-card {
