@@ -93,10 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Stats Count-Up Animation ---
-    const statsSection = document.getElementById('stats-bar');
-    const statNumbers = document.querySelectorAll('.stat-number');
+    const statsSections = document.querySelectorAll('.cu-stat-section');
+    const statNumbers = document.querySelectorAll('.stat-count-up');
 
-    if (statsSection && statNumbers.length > 0) {
+    if (statsSections.length > 0 && statNumbers.length > 0) {
         let hasAnimated = false;
 
         const countUp = (el) => {
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isNaN(targetNum)) return;
 
             const suffix = targetText.replace(/[0-9,]/g, '');
-            const duration = 1500; // 1.5s
+            const duration = 2000; // 2s
             const frameDuration = 1000 / 60;
             const totalFrames = Math.round(duration / frameDuration);
             let frame = 0;
@@ -129,17 +129,19 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting && !hasAnimated) {
-                hasAnimated = true;
-                statNumbers.forEach(num => {
-                    // Store original text in a data attribute temporarily
-                    num.dataset.target = num.innerText;
-                    countUp(num);
-                });
-            }
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasAnimated) {
+                    hasAnimated = true;
+                    statNumbers.forEach(num => {
+                        // Store original text in a data attribute temporarily
+                        num.dataset.target = num.innerText;
+                        countUp(num);
+                    });
+                }
+            });
         }, { threshold: 0.5 });
 
-        observer.observe(statsSection);
+        statsSections.forEach(sec => observer.observe(sec));
     }
 
     // --- Web3 Mouse Parallax Effect ---

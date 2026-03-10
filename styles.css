@@ -2628,14 +2628,19 @@ a {
     display: flex;
     gap: 1.5rem;
     width: max-content;
-    padding-left: max(2rem, calc(50vw - 640px + 2rem));
     padding-bottom: 4rem;
 }
 
-/* Ensure right spacing acts correctly inside horizontal scrolling */
+/* Bulletproof edge spacing using flex items instead of padding (fixes clipping bugs) */
+.cu-catalog-track::before {
+    content: "";
+    min-width: max(0rem, calc((100vw - 1280px) / 2));
+    flex-shrink: 0;
+}
+
 .cu-catalog-track::after {
     content: "";
-    width: max(2rem, calc(50vw - 640px + 2rem));
+    min-width: max(2rem, calc((100vw - 1280px) / 2 + 2rem));
     flex-shrink: 0;
 }
 
@@ -2825,10 +2830,12 @@ a {
 /* Tiny floating avatars behind/around the number */
 .cu-stat-avatars {
     position: absolute;
-    width: 60%;
-    max-width: 800px;
+    width: 100%;
+    max-width: 900px;
     height: 100%;
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     pointer-events: none;
     z-index: 2;
 }
@@ -2836,22 +2843,55 @@ a {
 .stat-avatar {
     position: absolute;
     border-radius: 50%;
-    width: 64px;
-    height: 64px;
+    width: 72px;
+    height: 72px;
     object-fit: cover;
     border: 2px solid var(--border-color);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    opacity: 0.8;
+    opacity: 0.85;
+    animation: avatar-float 6s ease-in-out infinite;
 }
 
-.stat-avatar.left {
-    top: 20%;
-    left: 0;
+@keyframes avatar-float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
 }
 
-.stat-avatar.right {
-    bottom: 30%;
-    right: 0;
+.stat-avatar.av-1 {
+    top: 15%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.stat-avatar.av-2 {
+    top: 25%;
+    right: 5%;
+    animation-delay: -1.2s;
+}
+
+.stat-avatar.av-3 {
+    bottom: 20%;
+    left: 15%;
+    animation-delay: -2.4s;
+}
+
+.stat-avatar.av-4 {
+    bottom: 10%;
+    right: 20%;
+    animation-delay: -3.6s;
+}
+
+.stat-avatar.av-5 {
+    top: 60%;
+    left: 80%;
+    animation-delay: -4.8s;
 }
 
 /* ----------------------------------------- */
