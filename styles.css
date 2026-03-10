@@ -2777,6 +2777,17 @@ a {
     border-radius: 100px;
     font-size: 0.95rem;
     font-weight: 500;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+    /* override right: 1.5rem from parent class */
+}
+
+.cu-agent-card:hover .cu-add-btn-custom {
+    transform: translateX(-50%) scale(1.05);
+    /* maintain centering on hover */
 }
 
 .cu-custom-content {
