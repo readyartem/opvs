@@ -2615,32 +2615,24 @@ a {
     width: 100%;
     overflow-x: auto;
     padding: 0 0 2rem 0;
-    /* padding for the drop shadow if any */
     scrollbar-width: none;
-    /* Firefox */
     scroll-behavior: smooth;
+    /* CSS Grid layout for perfect edge-bleed tracking */
+    display: grid;
+    grid-template-columns:
+        max(2rem, calc(50vw - 640px + 2rem)) max-content max(2rem, calc(50vw - 640px + 2rem));
 }
 
 .cu-catalog-scroller::-webkit-scrollbar {
     display: none;
-    /* Safari and Chrome */
 }
 
 .cu-catalog-track {
+    grid-column: 2;
     display: flex;
     gap: 1.5rem;
-    width: max-content;
-    /* Use 50% (of parent container width) to avoid scrollbar 100vw miscalculation */
-    padding-left: max(2rem, calc(50% - 640px + 2rem));
+    width: 100%;
     padding-bottom: 4rem;
-    /* Buffer for staggered layout */
-}
-
-/* Ensure right spacing acts correctly inside horizontal scrolling */
-.cu-catalog-track::after {
-    content: "";
-    width: max(2rem, calc(50% - 640px + 2rem));
-    flex-shrink: 0;
 }
 
 .cu-agent-card {
@@ -2665,26 +2657,10 @@ a {
     border-color: rgba(238, 191, 1, 0.4);
 }
 
-.cu-agent-card.bg-orange {
-    background: #1f1410;
-    border: 1px solid #3d2315;
-}
-
-.cu-agent-card.bg-blue {
-    background: #101620;
-    border: 1px solid #1a273b;
-}
-
-.cu-agent-card.bg-green {
-    background: #111a14;
-    border: 1px solid #1d3323;
-}
-
-.cu-agent-card.bg-purple {
-    background: #181120;
-    border: 1px solid #281a3b;
-}
-
+.cu-agent-card.bg-orange,
+.cu-agent-card.bg-blue,
+.cu-agent-card.bg-green,
+.cu-agent-card.bg-purple,
 .cu-agent-card.bg-dark {
     background: #0a0a0c;
     border: 1px solid #1a1a1f;
