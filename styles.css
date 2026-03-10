@@ -2617,15 +2617,7 @@ a {
     padding-bottom: 2rem;
     scrollbar-width: none;
     scroll-behavior: smooth;
-    /* Bulletproof grid alignment engine avoiding flex padding bugs and 'vw' scrollbar bugs */
-    display: grid;
-    grid-template-columns:
-        minmax(2rem, calc(50% - 640px + 2rem)) max-content minmax(2rem, calc(50% - 640px + 2rem));
-}
-
-.cu-catalog-scroller::before,
-.cu-catalog-scroller::after {
-    content: "";
+    display: block;
 }
 
 .cu-catalog-scroller::-webkit-scrollbar {
@@ -2633,10 +2625,18 @@ a {
 }
 
 .cu-catalog-track {
-    grid-column: 2;
     display: flex;
     gap: 1.5rem;
+    width: max-content;
     padding-bottom: 4rem;
+    /* Use 50% padding trick to exactly match the 1280px container bounds, gracefully ignoring scrollbar widths */
+    padding-left: max(2rem, calc(50% - 640px + 1rem));
+}
+
+.cu-catalog-track::after {
+    content: "";
+    width: max(2rem, calc(50vw - 640px));
+    flex-shrink: 0;
 }
 
 .cu-agent-card {
