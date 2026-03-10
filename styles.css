@@ -547,13 +547,14 @@ a {
 
 .col-divider {
     height: 1px;
-    width: 30%;
+    width: 100%;
     background: var(--border-color);
     margin: 2rem 0;
 }
 
 .hero-right .col-divider {
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0;
 }
 
 /* ----------------------------------------- */
@@ -2265,4 +2266,591 @@ a {
     .bento-grid { grid-template-columns: 1fr; }
     .bento-card.span-2 { grid-column: span 1; }
     .footer-container { flex-direction: column; text-align: center; }
+}
+
+/* ----------------------------------------- */
+/* ClickUp Clone Block 3: The Catalog        */
+/* ----------------------------------------- */
+.cu-catalog-section {
+    padding: 8rem 0 4rem;
+    overflow: hidden;
+    background-color: var(--bg-primary); 
+    border-top: 1px solid var(--border-color); /* Subtle divider if needed */
+}
+
+.cu-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.cu-catalog-header {
+    margin-bottom: 3rem;
+}
+
+.cu-section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    margin-bottom: 1rem;
+}
+
+.cu-section-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+.cu-catalog-scroller {
+    width: 100%;
+    overflow-x: auto;
+    padding: 0 2rem 2rem; /* padding for the drop shadow if any */
+    scrollbar-width: none; /* Firefox */
+}
+
+.cu-catalog-scroller::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+.cu-catalog-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    padding-left: calc((100vw - var(--container-max)) / 2);
+    padding-right: 2rem;
+}
+
+/* Fallback padding if screen is smaller than container */
+@media (max-width: 1200px) {
+    .cu-catalog-track {
+        padding-left: 2rem;
+    }
+}
+
+.cu-agent-card {
+    position: relative;
+    width: 320px;
+    height: 420px;
+    border-radius: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.cu-agent-card:hover {
+    transform: translateY(-8px);
+}
+
+.cu-agent-card.bg-orange { background: #1f1410; border: 1px solid #3d2315; }
+.cu-agent-card.bg-blue { background: #101620; border: 1px solid #1a273b; }
+.cu-agent-card.bg-green { background: #111a14; border: 1px solid #1d3323; }
+.cu-agent-card.bg-purple { background: #181120; border: 1px solid #281a3b; }
+.cu-agent-card.bg-dark { background: #0a0a0c; border: 1px solid #1a1a1f; }
+
+.cu-agent-card-header {
+    padding: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 2;
+}
+
+.card-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--accent); /* OPVS yellow */
+}
+
+.cu-agent-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    object-position: bottom;
+    z-index: 1;
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.cu-add-btn {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.1);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cu-agent-card:hover .cu-add-btn {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    transform: scale(1.1);
+}
+
+.cu-custom-content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+}
+
+/* ----------------------------------------- */
+/* ClickUp Clone Block 4: Giant Stat         */
+/* ----------------------------------------- */
+.cu-stat-section {
+    padding: 8rem 0;
+    position: relative;
+    background: var(--bg-primary);
+    overflow: hidden;
+}
+
+/* Faint dot grid like ClickUp */
+.cu-stat-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: 1;
+}
+
+.cu-stat-wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cu-stat-number {
+    font-family: var(--font-heading);
+    font-size: clamp(5rem, 15vw, 12rem);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    font-weight: 700;
+    text-align: center;
+    /* Soft gradient matching OPVS aesthetic but huge like ClickUp */
+    background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 3;
+}
+
+/* Tiny floating avatars behind/around the number */
+.cu-stat-avatars {
+    position: absolute;
+    width: 60%;
+    max-width: 800px;
+    height: 100%;
+    top: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.stat-avatar {
+    position: absolute;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    opacity: 0.8;
+}
+
+.stat-avatar.left {
+    top: 20%;
+    left: 0;
+}
+
+.stat-avatar.right {
+    bottom: 30%;
+    right: 0;
+}
+
+/* ----------------------------------------- */
+/* ClickUp Clone Block 5: Bento Grid         */
+/* ----------------------------------------- */
+.cu-bento-section {
+    padding: 6rem 0;
+    background: var(--bg-primary);
+}
+
+.cu-bento-header {
+    margin-bottom: 4rem;
+}
+
+.cu-bento-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.cu-bento-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cu-bento-card {
+    background: #0d0d0f; /* Dark card color */
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    min-height: 250px;
+}
+
+.cu-bento-card.tall {
+    justify-content: flex-start;
+    padding: 0;
+}
+
+.cu-bento-card.tall .card-content {
+    padding: 3rem 3rem 1.5rem;
+}
+
+.cu-bento-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+}
+
+.cu-bento-card p {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-size: 1.1rem;
+}
+
+.cu-bento-mockup {
+    margin-top: auto;
+    width: 100%;
+    padding: 0 2rem;
+    transform: translateY(2rem);
+    transition: transform 0.4s ease;
+}
+
+.cu-bento-card.tall:hover .cu-bento-mockup {
+    transform: translateY(1rem);
+}
+
+@media (max-width: 1024px) {
+    .cu-bento-grid {
+        grid-template-columns: 1fr;
+    }
+    .cu-bento-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .cu-bento-col {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* ----------------------------------------- */
+/* ClickUp Clone Block 6: Sticky UI Reveal   */
+/* ----------------------------------------- */
+.cu-sticky-section {
+    padding: 8rem 0;
+    position: relative;
+    background: var(--bg-primary);
+}
+
+.cu-sticky-container {
+    display: flex;
+    gap: 6rem;
+    align-items: flex-start;
+}
+
+.cu-sticky-left {
+    flex: 1;
+    position: sticky;
+    top: 15vh;
+}
+
+.cu-sticky-content {
+    max-width: 500px;
+}
+
+.cu-eyebrow {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.cu-sticky-features {
+    list-style: none;
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sf-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sf-title .check {
+    color: var(--accent);
+}
+
+.sf-desc {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    padding-left: 1.75rem;
+}
+
+.cu-sticky-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem; /* Spacing between scrolling cards */
+}
+
+.cu-scroll-card {
+    background: #0d0d0f;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 1rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.cu-scroll-card .scroll-img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+@media (max-width: 1024px) {
+    .cu-sticky-container {
+        flex-direction: column;
+    }
+    .cu-sticky-left {
+        position: relative;
+        top: 0;
+        margin-bottom: 4rem;
+    }
+}
+
+/* ----------------------------------------- */
+/* ClickUp Clone Block 7: Capabilities Grid  */
+/* ----------------------------------------- */
+.cu-capabilities-section {
+    padding: 8rem 0;
+    background: var(--bg-primary);
+}
+
+.cu-cap-header {
+    margin-bottom: 4rem;
+}
+
+.cu-cap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.cu-cap-card {
+    background: #0d0d0f;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 3rem;
+    transition: transform 0.3s ease;
+}
+
+.cu-cap-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(238, 191, 1, 0.3);
+}
+
+.cap-icon {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.cu-cap-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+}
+
+.cu-cap-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.cap-bad {
+    color: var(--text-tertiary);
+}
+
+.cap-good {
+    color: var(--text-primary);
+}
+
+@media (max-width: 1024px) {
+    .cu-cap-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ----------------------------------------- */
+/* ClickUp Clone Block 8: FAQ & Footer       */
+/* ----------------------------------------- */
+.cu-faq-section {
+    padding: 8rem 0;
+    background: var(--bg-primary);
+}
+
+.cu-faq-header {
+    margin-bottom: 4rem;
+}
+
+.cu-faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    border-top: 1px solid var(--border-color);
+}
+
+.cu-faq-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cu-faq-q {
+    padding: 2rem 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none; /* remove default arrow */
+}
+
+.cu-faq-q::-webkit-details-marker {
+    display: none;
+}
+
+.cu-faq-icon {
+    font-size: 1.5rem;
+    color: var(--text-tertiary);
+    transition: transform 0.3s;
+}
+
+.cu-faq-item[open] .cu-faq-icon {
+    transform: rotate(45deg);
+}
+
+.cu-faq-a {
+    padding-bottom: 2rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* Final CTA */
+.border-top {
+    border-top: 1px solid var(--border-color);
+}
+
+.cu-final-cta {
+    padding: 10rem 0;
+    background: var(--bg-primary);
+}
+
+.cu-massive-title {
+    font-family: var(--font-heading);
+    line-height: 1.1;
+}
+
+/* Footer */
+.cu-footer {
+    padding: 6rem 0 2rem;
+    background: #06070a; /* Darkest OPVS background */
+    border-top: 1px solid var(--border-color);
+}
+
+.cu-footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 4rem;
+}
+
+.cu-footer-col h4 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+}
+
+.cu-footer-col a:hover {
+    color: var(--text-primary) !important;
+}
+
+@media (max-width: 1024px) {
+    .cu-footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .cu-footer-brand {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .cu-footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .cu-footer-brand {
+        grid-column: span 1;
+    }
+    .cu-footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
 }
