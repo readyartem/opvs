@@ -2720,14 +2720,6 @@ a {
     filter: grayscale(0) brightness(1);
 }
 
-.cu-agent-card:hover .static-img {
-    opacity: 0;
-}
-
-.cu-agent-card:hover .animated-media {
-    opacity: 1;
-}
-
 .cu-add-btn {
     position: absolute;
     bottom: 1.5rem;
