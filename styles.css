@@ -2546,8 +2546,6 @@ a {
     padding: 8rem 0 4rem;
     overflow: hidden;
     background-color: var(--bg-primary);
-    border-top: 1px solid var(--border-color);
-    /* Subtle divider if needed */
 }
 
 .cu-container {
@@ -2632,11 +2630,17 @@ a {
     display: flex;
     gap: 1.5rem;
     width: max-content;
-    /* Flush with container left on wide screens, flush with edge on small screens */
-    padding-left: max(0rem, calc((100vw - var(--container-max)) / 2));
-    padding-right: 2rem;
+    /* Use 50% (of parent container width) to avoid scrollbar 100vw miscalculation */
+    padding-left: max(2rem, calc(50% - 640px + 2rem));
     padding-bottom: 4rem;
     /* Buffer for staggered layout */
+}
+
+/* Ensure right spacing acts correctly inside horizontal scrolling */
+.cu-catalog-track::after {
+    content: "";
+    width: max(2rem, calc(50% - 640px + 2rem));
+    flex-shrink: 0;
 }
 
 .cu-agent-card {
