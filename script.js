@@ -199,6 +199,29 @@ document.addEventListener('DOMContentLoaded', () => {
         // Approximate width of a card (320px) + gap (1.5rem = 24px)
         const scrollAmount = 350;
 
+        const updateArrowStates = () => {
+            if (catScroller.scrollLeft <= 5) {
+                catPrev.classList.add('disabled');
+            } else {
+                catPrev.classList.remove('disabled');
+            }
+
+            if (Math.ceil(catScroller.scrollLeft + catScroller.clientWidth) >= catScroller.scrollWidth - 5) {
+                catNext.classList.add('disabled');
+            } else {
+                catNext.classList.remove('disabled');
+            }
+        };
+
+        // Initialize states
+        updateArrowStates();
+
+        // Update on scroll
+        catScroller.addEventListener('scroll', () => {
+            // throttle or debounce could go here, but native scroll fires fast
+            updateArrowStates();
+        });
+
         catPrev.addEventListener('click', () => {
             catScroller.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
         });

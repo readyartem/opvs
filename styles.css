@@ -603,7 +603,7 @@ a {
 .hero-divider {
     height: 1px;
     width: 100%;
-    background: var(--border-color);
+    background: transparent;
     margin-top: 4rem;
 }
 
@@ -2603,9 +2603,15 @@ a {
     justify-content: center;
 }
 
-.slider-arrow:hover {
+.slider-arrow:not(.disabled):hover {
     background: var(--text-primary);
     color: var(--bg-primary);
+}
+
+.slider-arrow.disabled {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
 }
 
 .cu-catalog-scroller {
@@ -2763,6 +2769,14 @@ a {
     background: var(--text-primary);
     color: var(--bg-primary);
     transform: scale(1.1);
+}
+
+.cu-add-btn-custom {
+    width: auto;
+    padding: 0 1.25rem;
+    border-radius: 100px;
+    font-size: 0.95rem;
+    font-weight: 500;
 }
 
 .cu-custom-content {
