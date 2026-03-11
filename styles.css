@@ -2629,12 +2629,22 @@ a {
     gap: 1.5rem;
     width: max-content;
     padding-bottom: 4rem;
-    padding-left: max(2rem, calc(50vw - 640px + 1rem));
+    /* Use 50% padding trick to exactly match the 1280px container bounds natively */
+    padding-left: max(2rem, calc(50% - 640px + 1rem));
+    /* Native right padding fallback */
+    padding-right: max(2rem, calc(50% - 640px + 1rem));
 }
 
-.cu-agent-card:last-child {
-    /* Directly bound padding mathematically into the final element's margin to bypass Safari/Chrome flex track padding collapse entirely */
-    margin-right: max(2rem, calc(50vw - 640px + 1rem));
+/* Foolproof Webkit Flex Scroll Right-Margin Spacer */
+.cu-catalog-track::after {
+    content: "\00a0";
+    font-size: 0;
+    min-width: max(2rem, calc(50vw - 640px + 1rem));
+    padding-right: 2rem;
+    visibility: hidden;
+    pointer-events: none;
+    flex-shrink: 0;
+    display: block;
 }
 
 .cu-agent-card {
