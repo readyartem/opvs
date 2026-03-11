@@ -94,15 +94,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Human Skills Tabs Logic (Block 7) ---
     const skillTabs = document.querySelectorAll('.cu-skill-item');
-    if (skillTabs.length > 0) {
+    const mockupStates = document.querySelectorAll('.mockup-state');
+
+    if (skillTabs.length > 0 && mockupStates.length > 0) {
         skillTabs.forEach(tab => {
             tab.addEventListener('click', () => {
-                // Remove active class from all
+                // Remove active class from all tabs
                 skillTabs.forEach(t => t.classList.remove('active'));
-                // Add to clicked
+
+                // Add to clicked tab
                 tab.classList.add('active');
 
-                // Optional: Update right-side content based on data-tab attribute if needed later
+                // Get the target tab ID
+                const targetId = tab.getAttribute('data-tab');
+
+                // Hide all mockup states
+                mockupStates.forEach(state => state.classList.remove('active'));
+
+                // Show the matching mockup state
+                const targetState = document.getElementById(`mockup-${targetId}`);
+                if (targetState) {
+                    targetState.classList.add('active');
+                }
             });
         });
     }

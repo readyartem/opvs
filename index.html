@@ -418,31 +418,154 @@
                     <div class="cu-bhc-right">
                         <!-- UI Mockup Inside -->
                         <div class="cu-ui-mockup-window">
-                            <div class="mockup-header">
-                                <img src="assets/agent_avatar_1_yellow.png" alt="EA Agent" class="mockup-avatar">
-                                <span class="mockup-title">Executive Assistant Agent</span>
-                            </div>
-                            <ul class="mockup-task-list">
-                                <li>Reviewing meeting notes</li>
-                                <li>Meeting scheduled</li>
-                                <li>Drafting email</li>
-                            </ul>
-
-                            <div class="mockup-email-compose">
-                                <div class="mockup-email-subject">
-                                    <span class="email-icon">M</span> RE: Client feedback session
-                                </div>
-                                <div class="mockup-email-to">To: Michael Van Doorn</div>
-                                <div class="mockup-email-body">
-                                    <p>Hey, Michael!</p>
-                                    <p>Thanks for providing your feedback earlier today!</p>
-                                    <p>I scheduled a follow-up meeting for tomorrow at 3pm.</p>
-                                </div>
-                            </div>
-
-                            <!-- Overlay Image (Transparent Background) -->
+                            <!-- Overlay Image (Transparent Background) - Keep Global for section -->
                             <img src="assets/agent_email_yellow_nobg.png" alt="Overlay Agent"
                                 class="cu-bhc-overlay-image">
+
+                            <!-- EMAIL STATE (Default) -->
+                            <div class="mockup-state active" id="mockup-email">
+                                <div class="mockup-header">
+                                    <img src="assets/agent_avatar_1_yellow.png" alt="EA Agent" class="mockup-avatar">
+                                    <span class="mockup-title">Executive Assistant Agent</span>
+                                </div>
+                                <ul class="mockup-task-list">
+                                    <li>Reviewing meeting notes</li>
+                                    <li>Meeting scheduled</li>
+                                    <li>Drafting email</li>
+                                </ul>
+
+                                <div class="mockup-email-compose">
+                                    <div class="mockup-email-subject">
+                                        <span class="email-icon" style="background:var(--accent)">M</span> RE: Client
+                                        feedback session
+                                    </div>
+                                    <div class="mockup-email-to">To: Michael Van Doorn</div>
+                                    <div class="mockup-email-body">
+                                        <p>Hey, Michael!</p>
+                                        <p>Thanks for providing your feedback earlier today!</p>
+                                        <p>I scheduled a follow-up meeting for tomorrow at 3pm.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- DM STATE -->
+                            <div class="mockup-state" id="mockup-dm">
+                                <div class="mockup-header">
+                                    <img src="assets/agent_avatar_2_yellow.png" alt="Sales Agent" class="mockup-avatar">
+                                    <span class="mockup-title">Outreach Agent</span>
+                                </div>
+                                <ul class="mockup-task-list">
+                                    <li>Analyzing lead intent</li>
+                                    <li>Drafting personalized message</li>
+                                    <li>Sending DM</li>
+                                </ul>
+                                <div class="mockup-email-compose">
+                                    <div class="mockup-email-subject">
+                                        <span class="email-icon" style="background:#5e6ad2">in</span> LinkedIn Message
+                                    </div>
+                                    <div class="mockup-email-to">To: Sarah Jenkins</div>
+                                    <div class="mockup-email-body">
+                                        <p>Hi Sarah,</p>
+                                        <p>I noticed your recent post about scaling AI operations. We've helped similar
+                                            teams increase output by 3x.</p>
+                                        <p>Would you be open to a brief chat?</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TASK STATE -->
+                            <div class="mockup-state" id="mockup-task">
+                                <div class="mockup-header">
+                                    <img src="assets/agent_dev_yellow.png" alt="PM Agent" class="mockup-avatar">
+                                    <span class="mockup-title">Project Manager Agent</span>
+                                </div>
+                                <ul class="mockup-task-list">
+                                    <li>Triaging incoming bug report</li>
+                                    <li>Assessing severity</li>
+                                    <li>Assigning to Developer</li>
+                                </ul>
+                                <div class="mockup-email-compose">
+                                    <div class="mockup-email-subject">
+                                        <span class="email-icon" style="background:#e83f5b">!</span> High Priority Bug
+                                    </div>
+                                    <div class="mockup-email-to">Assigned to: Alex Backend</div>
+                                    <div class="mockup-email-body"
+                                        style="font-family: monospace; font-size: 0.85rem; background: #111; padding: 1rem; border-radius: 8px;">
+                                        [ERR] Database connection timeout on production replica.<br><br>
+                                        Context: Discovered via Datadog alert.<br>
+                                        Action required: Investigate connection pool limits.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- EVENTS STATE -->
+                            <div class="mockup-state" id="mockup-events">
+                                <div class="mockup-header">
+                                    <img src="assets/agent_creative_yellow.png" alt="Coordinator Agent"
+                                        class="mockup-avatar">
+                                    <span class="mockup-title">Events Coordinator Agent</span>
+                                </div>
+                                <ul class="mockup-task-list">
+                                    <li>Cross-referencing calendars</li>
+                                    <li>Finding optimal 30min slot</li>
+                                    <li>Sending invites</li>
+                                </ul>
+                                <div class="mockup-email-compose" style="text-align: center; padding: 2rem;">
+                                    <div style="font-size: 3rem; margin-bottom: 1rem;">📅</div>
+                                    <div style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Product
+                                        Sync Scheduled</div>
+                                    <div style="color: var(--text-secondary);">Tomorrow, 10:00 AM - 10:30 AM (PST)</div>
+                                    <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem;">
+                                        <img src="assets/agent_avatar_1_yellow.png" class="mockup-avatar">
+                                        <img src="assets/agent_creative_yellow.png" class="mockup-avatar">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- MENTIONS STATE -->
+                            <div class="mockup-state" id="mockup-mentions">
+                                <div class="mockup-header">
+                                    <img src="assets/agent_custom_blackbg.png" alt="Knowledge Agent"
+                                        class="mockup-avatar">
+                                    <span class="mockup-title">Knowledge Base Agent</span>
+                                </div>
+                                <ul class="mockup-task-list">
+                                    <li>Listening for @knowledge...</li>
+                                    <li>Searching internal docs</li>
+                                    <li>Summarizing answer</li>
+                                </ul>
+                                <div class="mockup-email-compose"
+                                    style="display: flex; flex-direction: column; gap: 1rem; background: transparent; border: none; padding: 0;">
+                                    <div
+                                        style="display: flex; gap: 1rem; align-items: flex-start; background: #1a1a1f; border-radius:12px; padding: 1rem; border:1px solid rgba(255,255,255,0.05);">
+                                        <div
+                                            style="width:32px; height:32px; background:#333; border-radius:50%; flex-shrink:0;">
+                                        </div>
+                                        <div>
+                                            <div style="font-weight:600; margin-bottom: 0.25rem;">User <span
+                                                    style="font-weight:400; color:var(--text-secondary); font-size:0.8rem; margin-left:8px;">11:42
+                                                    AM</span></div>
+                                            <div style="font-size: 0.95rem;"><span
+                                                    style="color:var(--accent)">@knowledge</span> Where is the Q3
+                                                roadmap located?</div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        style="display: flex; gap: 1rem; align-items: flex-start; background: rgba(247,202,24,0.05); border-radius:12px; padding: 1rem; border:1px solid rgba(247,202,24,0.2);">
+                                        <img src="assets/agent_custom_blackbg.png" class="mockup-avatar"
+                                            style="flex-shrink:0;">
+                                        <div>
+                                            <div style="font-weight:600; margin-bottom: 0.25rem;">Knowledge Agent <span
+                                                    style="font-weight:400; color:var(--text-secondary); font-size:0.8rem; margin-left:8px;">11:43
+                                                    AM</span></div>
+                                            <div style="font-size: 0.95rem;">The Q3 roadmap is in the Notion directory
+                                                under Engineering Workspace. Here is the direct link: <span
+                                                    style="color:var(--accent); text-decoration: underline;">Q3_Roadmap_Final</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
