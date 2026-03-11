@@ -3869,14 +3869,48 @@ a {
 /* New Block 8: Collaboration Twin Cards     */
 /* ----------------------------------------- */
 .cu-collab-section {
-    padding: 2rem 0 6rem;
+    position: relative;
+    padding: 0 0 6rem;
+    margin-top: 4rem;
     background: var(--bg-primary);
+}
+
+.cu-collab-section::before,
+.cu-collab-section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.15) 80%, transparent);
+}
+
+.cu-collab-section::before {
+    top: 0;
+}
+
+.cu-collab-section::after {
+    bottom: 0;
 }
 
 .cu-collab-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 0;
+    position: relative;
+}
+
+/* Vertical separating stripe for the layout */
+.cu-collab-grid::after {
+    content: "";
+    position: absolute;
+    top: -0.5rem;
+    bottom: -0.5rem;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.15) 80%, transparent);
+    transform: translateX(-50%);
+    z-index: 0;
 }
 
 .cu-collab-card {
@@ -3884,26 +3918,29 @@ a {
     flex-direction: column;
     padding: 0;
     gap: 0;
-    border-radius: 24px;
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-color);
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
     overflow: hidden;
+    position: relative;
+    z-index: 10;
 }
 
 .cu-card-mockup-top {
     flex: 1;
-    background: rgba(255, 255, 255, 0.02);
+    background: transparent;
     min-height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3rem;
-    border-bottom: 1px solid var(--border-color);
+    padding: 3rem 1rem;
+    border-bottom: none;
     position: relative;
 }
 
 .cu-card-content-bottom {
-    padding: 2rem;
+    padding: 1rem 2rem 3rem;
+    text-align: center;
 }
 
 .cu-card-content-bottom h3 {
@@ -4100,6 +4137,16 @@ a {
     width: 1px;
     height: 20px;
     background: var(--border-color);
+}
+
+@media (max-width: 768px) {
+    .cu-collab-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cu-collab-grid::after {
+        display: none;
+    }
 }
 
 .org-branch.left {
