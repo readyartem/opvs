@@ -3328,8 +3328,8 @@ a {
 .cu-prompt-left::before {
     content: "";
     position: absolute;
-    top: -10rem;
-    bottom: -10rem;
+    top: -5rem;
+    bottom: -5rem;
     left: 50%;
     transform: translateX(-50%);
     width: 1px;
@@ -3448,7 +3448,7 @@ a {
     background: #ffffff;
     color: #000000;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     font-size: 0.85rem;
     font-weight: 600;
     white-space: nowrap;
