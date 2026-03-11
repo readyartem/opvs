@@ -370,10 +370,7 @@ a {
     margin-bottom: 1.5rem;
     /* Tighter margin so buttons stay up */
     font-family: var(--font-heading);
-    background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #FFFFFF;
 }
 
 /* Main Content Container */
@@ -2822,11 +2819,7 @@ a {
     letter-spacing: -0.05em;
     font-weight: 700;
     text-align: center;
-    /* Soft gradient matching OPVS aesthetic but huge like ClickUp */
-    background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #FFFFFF;
     z-index: 3;
 }
 
