@@ -3870,7 +3870,8 @@ a {
 /* ----------------------------------------- */
 .cu-collab-section {
     position: relative;
-    padding: 0 0 6rem;
+    padding: 0;
+    margin-bottom: 6rem;
     margin-top: -1rem;
     background: var(--bg-primary);
 }
@@ -3926,6 +3927,18 @@ a {
     z-index: 10;
 }
 
+.cu-collab-card:first-child::after {
+    content: "";
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle at bottom right, #000000 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 15;
+}
+
 .cu-card-mockup-top {
     flex: 1;
     background: transparent;
@@ -3964,18 +3977,6 @@ a {
     border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
-}
-
-.collab-doc-ui::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 70%;
-    height: 60%;
-    background: linear-gradient(135deg, transparent 0%, transparent 20%, var(--bg-primary) 100%);
-    pointer-events: none;
-    z-index: 5;
 }
 
 
@@ -4053,13 +4054,13 @@ a {
 }
 
 .blue-cursor {
-    color: #007aff;
-    top: 50%;
+    color: var(--accent);
+    top: 65%;
     right: 15%;
 }
 
 .purple-cursor {
-    color: #bd93f9;
+    color: var(--accent);
     top: 20%;
     left: 45%;
     animation-delay: 1s;
