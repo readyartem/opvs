@@ -3289,6 +3289,21 @@ a {
     display: flex;
     gap: 4rem;
     align-items: center;
+    position: relative;
+    padding: 2rem 0;
+}
+
+/* Vertical separating stripe for the layout */
+.cu-split-prompt-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: var(--border-color);
+    transform: translateX(-50%);
+    z-index: 0;
 }
 
 .cu-prompt-left {
@@ -3350,11 +3365,30 @@ a {
 
 .tree-row {
     position: absolute;
-    bottom: 30px;
-    display: flex;
-    justify-content: space-between;
+    bottom: 10px;
     width: 100%;
-    padding: 0 10px;
+    height: 120px;
+}
+
+.tree-node-left {
+    position: absolute;
+    left: 80px;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.tree-node-center {
+    position: absolute;
+    left: 200px;
+    bottom: 20px;
+    transform: translateX(-50%);
+}
+
+.tree-node-right {
+    position: absolute;
+    left: 320px;
+    bottom: 0;
+    transform: translateX(-50%);
 }
 
 .tree-label {
@@ -3367,10 +3401,6 @@ a {
     font-weight: 600;
     white-space: nowrap;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.tree-node.center-node {
-    transform: translateY(-20px);
 }
 
 @media (max-width: 1024px) {

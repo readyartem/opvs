@@ -335,37 +335,29 @@
                         <!-- Connecting Lines (SVG for crisp dark styling) -->
                         <svg class="tree-svg-lines" viewBox="0 0 400 300" preserveAspectRatio="none">
                             <!-- Main trunk -->
-                            <path class="tree-path" d="M 200 40 L 200 100" stroke="var(--border-color)" stroke-width="2"
+                            <path class="tree-path" d="M 200 40 L 200 90" stroke="var(--border-color)" stroke-width="2"
                                 fill="none" />
-                            <!-- Branches -->
-                            <path class="tree-path" d="M 200 100 C 200 120, 80 120, 80 140 L 80 180"
-                                stroke="var(--border-color)" stroke-width="2" fill="none" />
-                            <path class="tree-path" d="M 200 100 C 200 120, 320 120, 320 140 L 320 180"
-                                stroke="var(--border-color)" stroke-width="2" fill="none" />
-                            <path class="tree-path" d="M 200 100 L 200 150" stroke="var(--border-color)"
+                            <!-- Branches branching out smoothly -->
+                            <path class="tree-path" d="M 200 90 C 200 130, 80 120, 80 160" stroke="var(--border-color)"
                                 stroke-width="2" fill="none" />
-
-                            <!-- Bottom merge -->
-                            <path class="tree-path" d="M 80 230 C 80 250, 200 270, 200 280 L 200 300"
+                            <path class="tree-path" d="M 200 90 C 200 130, 320 120, 320 160"
                                 stroke="var(--border-color)" stroke-width="2" fill="none" />
-                            <path class="tree-path" d="M 320 230 C 320 250, 200 270, 200 280"
-                                stroke="var(--border-color)" stroke-width="2" fill="none" />
-                            <path class="tree-path" d="M 200 190 L 200 280" stroke="var(--border-color)"
-                                stroke-width="2" fill="none" />
+                            <path class="tree-path" d="M 200 90 L 200 140" stroke="var(--border-color)" stroke-width="2"
+                                fill="none" />
                         </svg>
 
-                        <!-- Middle Row Nodes -->
-                        <div class="tree-row middle-row">
-                            <div class="tree-node">
+                        <!-- Middle Row Nodes perfectly overlapping the SVG paths at 80, 200, 320 -->
+                        <div class="tree-row">
+                            <div class="tree-node tree-node-left">
                                 <img src="assets/agent_avatar_1_yellow.png" alt="Copywriter Agent" class="tree-avatar">
                                 <div class="tree-label"><span style="color:var(--primary);">◉</span> Copywriting</div>
                             </div>
-                            <div class="tree-node center-node">
+                            <div class="tree-node tree-node-center">
                                 <img src="assets/agent_avatar_2_yellow.png" alt="Email Design Agent"
                                     class="tree-avatar">
                                 <div class="tree-label"><span style="color:var(--accent);">◉</span> Email Design</div>
                             </div>
-                            <div class="tree-node">
+                            <div class="tree-node tree-node-right">
                                 <img src="assets/agent_email_yellow.png" alt="Campaign Agent" class="tree-avatar">
                                 <div class="tree-label"><span style="color:#bd93f9;">◉</span> Campaign lifecycle</div>
                             </div>
