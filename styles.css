@@ -3745,7 +3745,7 @@ a {
 }
 
 .cu-ui-mockup-window {
-    background: #000000;
+    background: #0a0a0c;
     border: 1px solid var(--border-color);
     border-radius: 16px;
     padding: 2rem;
@@ -3793,7 +3793,7 @@ a {
 }
 
 .mockup-email-compose {
-    background: hsl(0, 0%, 4%);
+    background: #1a1a1f;
     border-radius: 12px;
     padding: 1.5rem;
     border: 1px solid var(--border-color);
