@@ -126,7 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const typewriterElement = document.getElementById('agent-typewriter');
         const typingLoader = document.getElementById('typing-loader');
         const typingSuccess = document.getElementById('typing-success');
-        const typingCursor = document.getElementById('typing-cursor');
         let typewriterTimeout;
 
         const typewriterMessages = {
@@ -148,7 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (typingLoader) typingLoader.style.display = 'inline-flex';
             if (typingSuccess) typingSuccess.style.display = 'none';
-            if (typingCursor) typingCursor.style.display = 'inline-block';
 
             let i = 0;
             function typeWriter() {
@@ -161,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     // Typing finished
                     if (typingLoader) typingLoader.style.display = 'none';
-                    if (typingCursor) typingCursor.style.display = 'none';
                     if (typingSuccess) typingSuccess.style.display = 'inline-block';
                 }
             }
