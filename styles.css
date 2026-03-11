@@ -3281,7 +3281,7 @@ a {
 /* ----------------------------------------- */
 .cu-split-prompt-section {
     position: relative;
-    padding: 5rem 0;
+    padding: 3rem 0;
     background: var(--bg-primary);
 }
 
@@ -3313,7 +3313,15 @@ a {
 
 /* Vertical separating stripe for the layout */
 .cu-split-prompt-container::after {
-    display: none;
+    content: "";
+    position: absolute;
+    top: 5rem;
+    bottom: 5rem;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.15) 80%, transparent);
+    transform: translateX(-50%);
+    z-index: 0;
 }
 
 .cu-prompt-left {
@@ -3328,8 +3336,8 @@ a {
 .cu-prompt-left::before {
     content: "";
     position: absolute;
-    top: -7rem;
-    bottom: -7rem;
+    top: -5rem;
+    bottom: -5rem;
     left: 50%;
     transform: translateX(-50%);
     width: 1px;
@@ -3346,7 +3354,7 @@ a {
 
 .tree-diagram {
     position: relative;
-    width: 400px;
+    width: 600px;
     height: 520px;
     display: flex;
     flex-direction: column;
@@ -3393,7 +3401,7 @@ a {
 
 .top-node {
     top: 30px;
-    left: 200px;
+    left: 300px;
     transform: translateX(-50%);
 }
 
@@ -3431,14 +3439,14 @@ a {
 .tree-node-center {
     position: absolute;
     top: 180px;
-    left: 200px;
+    left: 300px;
     transform: translateX(-50%);
 }
 
 .tree-node-right {
     position: absolute;
     top: 250px;
-    left: 320px;
+    left: 520px;
     transform: translateX(-50%);
 }
 
