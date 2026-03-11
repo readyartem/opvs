@@ -3281,7 +3281,7 @@ a {
 /* ----------------------------------------- */
 .cu-split-prompt-section {
     position: relative;
-    padding: 8rem 0;
+    padding: 5rem 0;
     background: var(--bg-primary);
 }
 
@@ -3458,10 +3458,10 @@ a {
 }
 
 .cu-split-prompt-title {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(2rem, 4vw, 3.5rem);
     line-height: 1.05;
     letter-spacing: -0.04em;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-weight: 700;
 }
 
