@@ -259,68 +259,7 @@
             </div>
         </section>
 
-        <!-- Block 5: Platform Stack Bento -->
-        <section class="cu-bento-section">
-            <div class="cu-container">
-                <div class="cu-bento-header text-center mb-16">
-                    <h2 class="cu-section-title">The Complete Infrastructure</h2>
-                </div>
 
-                <div class="cu-bento-grid">
-                    <!-- Left Tall -->
-                    <div class="cu-bento-card tall bg-dark-card">
-                        <div class="card-content">
-                            <h3>Workspace Planner</h3>
-                            <p>Conversational AI that designs and provisions the entire workspace from scratch.</p>
-                        </div>
-                        <div class="cu-bento-mockup">
-                            <img src="assets/ai_office_canvas.png" alt="Workspace Planner"
-                                style="width:100%; height:auto; border-radius: 12px 12px 0 0; border: 1px solid var(--border-color); border-bottom: none;">
-                        </div>
-                    </div>
-
-                    <!-- Center Stack -->
-                    <div class="cu-bento-col">
-                        <div class="cu-bento-card bg-dark-card">
-                            <div class="card-content">
-                                <span class="card-icon"
-                                    style="font-size:2rem;display:block;margin-bottom:1rem;">🏗️</span>
-                                <h3>AgentBoard</h3>
-                                <p>Kanban visualization for AI task execution.</p>
-                            </div>
-                        </div>
-                        <div class="cu-bento-card bg-dark-card">
-                            <div class="card-content">
-                                <span class="card-icon"
-                                    style="font-size:2rem;display:block;margin-bottom:1rem;">💻</span>
-                                <h3>AgentDocs</h3>
-                                <p>Markdown-native context workspace.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Stack -->
-                    <div class="cu-bento-col">
-                        <div class="cu-bento-card bg-dark-card">
-                            <div class="card-content">
-                                <span class="card-icon"
-                                    style="font-size:2rem;display:block;margin-bottom:1rem;">✉️</span>
-                                <h3>AOR SDRs</h3>
-                                <p>AgentOutreachRoute: AI SDR campaigns that research, compose, and reply.</p>
-                            </div>
-                        </div>
-                        <div class="cu-bento-card bg-dark-card">
-                            <div class="card-content">
-                                <span class="card-icon"
-                                    style="font-size:2rem;display:block;margin-bottom:1rem;">⚡</span>
-                                <h3>OpenClaw Runtime</h3>
-                                <p>Multi-channel self-hosted agent framework.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- New Block 6: One Prompt Team (Screenshot 1) -->
         <section class="cu-split-prompt-section">
@@ -332,18 +271,18 @@
                             <img src="assets/agent_email_yellow.png" alt="Manager Agent" class="tree-avatar">
                         </div>
 
-                        <!-- Connecting Lines (SVG for crisp dark styling) -->
+                        <!-- Connecting Lines (SVG for crisp dark styling matching ClickUp) -->
                         <svg class="tree-svg-lines" viewBox="0 0 400 300" preserveAspectRatio="none">
                             <!-- Main trunk -->
-                            <path class="tree-path" d="M 200 40 L 200 90" stroke="var(--border-color)" stroke-width="2"
-                                fill="none" />
+                            <path class="tree-path" d="M 200 40 L 200 90" stroke="rgba(255, 255, 255, 0.15)"
+                                stroke-width="1" fill="none" />
                             <!-- Branches branching out smoothly -->
-                            <path class="tree-path" d="M 200 90 C 200 130, 80 120, 80 160" stroke="var(--border-color)"
-                                stroke-width="2" fill="none" />
+                            <path class="tree-path" d="M 200 90 C 200 130, 80 120, 80 160"
+                                stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" fill="none" />
                             <path class="tree-path" d="M 200 90 C 200 130, 320 120, 320 160"
-                                stroke="var(--border-color)" stroke-width="2" fill="none" />
-                            <path class="tree-path" d="M 200 90 L 200 140" stroke="var(--border-color)" stroke-width="2"
-                                fill="none" />
+                                stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" fill="none" />
+                            <path class="tree-path" d="M 200 90 L 200 140" stroke="rgba(255, 255, 255, 0.15)"
+                                stroke-width="1" fill="none" />
                         </svg>
 
                         <!-- Middle Row Nodes perfectly overlapping the SVG paths at 80, 200, 320 -->
@@ -366,11 +305,14 @@
                 </div>
 
                 <div class="cu-prompt-right">
-                    <div class="cu-eyebrow" style="color: var(--primary);">AGENTS IN MINUTES</div>
-                    <h2 class="cu-section-title">One prompt spins up an entire team</h2>
+                    <div class="cu-eyebrow"
+                        style="color: #bd93f9; font-family: monospace; letter-spacing: 0.1em; text-transform: uppercase;">
+                        AGENTS IN MINUTES</div>
+                    <h2 class="cu-split-prompt-title">One prompt spins up an entire team</h2>
                     <p class="cu-section-subtitle">Your goals, workflows, and frustrations - automatically delegated to
                         a team of specialized OPVS agents.</p>
-                    <button class="btn btn-primary btn-large mt-6">Explore all agents</button>
+                    <button class="btn btn-large mt-6"
+                        style="background: #ffffff; color: #000000; font-weight: 600;">Explore all agents</button>
                 </div>
             </div>
         </section>
@@ -381,15 +323,19 @@
                 <!-- Header area -->
                 <div class="cu-hs-header-flex">
                     <div class="cu-hs-left">
-                        <div class="cu-eyebrow" style="color: var(--text-secondary);">[HUMAN SKILLS]</div>
-                        <h2 class="cu-section-title" style="font-size: clamp(3rem, 5vw, 4rem); max-width: 500px;">Do
-                            more than humanly possible</h2>
+                        <div class="cu-eyebrow"
+                            style="color: var(--text-secondary); font-family: monospace; letter-spacing: 0.1em; text-transform: uppercase;">
+                            [HUMAN SKILLS]</div>
+                        <h2 class="cu-section-title"
+                            style="font-size: clamp(3rem, 6vw, 4.5rem); letter-spacing: -0.04em; max-width: 650px; line-height: 1.05;">
+                            Do more than humanly possible</h2>
                     </div>
                     <div class="cu-hs-right">
-                        <div class="cu-quote-block">
-                            <p class="cu-quote-text">"The holy grail of what enterprises are chasing - this is a game
-                                changer for work productivity."</p>
-                            <p class="cu-quote-author">— Jay Hack, CEO of Codegen</p>
+                        <div class="cu-quote-block" style="border: none; padding-left: 0; max-width: 350px;">
+                            <p class="cu-quote-text" style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem;">
+                                "The holy grail of what enterprises are chasing - this is a game changer for work
+                                productivity."</p>
+                            <p class="cu-quote-author" style="font-weight: 600;">— Jay Hack, CEO of Codegen</p>
                         </div>
                     </div>
                 </div>
