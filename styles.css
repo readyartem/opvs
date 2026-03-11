@@ -4257,57 +4257,87 @@ a {
     position: relative;
     width: 100%;
     max-width: 1200px;
-    height: 700px; /* Consistent baseline for floating elements */
+    height: 600px; /* Reduced height to force a waist-up framing */
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    margin-top: -450px; /* Overlap right onto the marquee rows */
+    pointer-events: none; /* Let clicks pass through to marquee */
 }
 
-.sh-character-wrapper .giant-character {
+.sh-character-wrapper .waist-character {
     position: relative;
-    height: 100%;
+    height: 120%; /* Scale up so bottom of image is cut off at the section edge, creating a waist-shot */
     width: auto;
-    object-fit: contain;
-    object-position: bottom center;
+    object-fit: cover;
+    object-position: top center;
     z-index: 5;
+    pointer-events: auto;
 }
 
-/* Floating Skill Pills */
+/* ----------------------------------------- */
+/* MARQUEE ROWS (Skill Pills)                */
+/* ----------------------------------------- */
+.sh-marquee-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 3rem 0 6rem 0; /* Extra bottom padding behind agent */
+    overflow: hidden;
+    /* Fade out the left and right edges smoothly */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    z-index: 2;
+}
+
+.sh-marquee-row {
+    position: relative;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.sh-marquee-track {
+    display: flex;
+    gap: 1.5rem;
+    padding-right: 1.5rem;
+    min-width: 200%;
+}
+
+.scroll-left .sh-marquee-track {
+    animation: marquee-left 45s linear infinite;
+}
+
+.scroll-right .sh-marquee-track {
+    animation: marquee-right 45s linear infinite;
+}
+
+@keyframes marquee-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+/* Floating Skill Pills Styling Inside Track */
 .sh-skill-pill {
-    position: absolute;
-    padding: 0.5rem 1.5rem;
+    flex-shrink: 0;
+    padding: 0.8rem 2rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50px;
     color: rgba(255, 255, 255, 0.4);
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(4px);
-    z-index: 2;
-    white-space: nowrap;
-    animation: slowFloat 8s ease-in-out infinite alternate;
-}
-
-/* Randomize floating slightly */
-.sh-skill-pill:nth-child(2n) {
-    animation-duration: 9s;
-    animation-delay: -2s;
-}
-.sh-skill-pill:nth-child(3n) {
-    animation-duration: 11s;
-    animation-delay: -4s;
-}
-.sh-skill-pill:nth-child(5n) {
-    animation-duration: 7s;
-    animation-delay: -1s;
-}
-
-@keyframes slowFloat {
-    0% { transform: translateY(0px) rotate(0deg); }
-    100% { transform: translateY(-15px) rotate(2deg); }
+    background: transparent;
+    pointer-events: auto;
 }
 
 /* Black Gradient Fade at the Bottom */
@@ -4322,17 +4352,13 @@ a {
     pointer-events: none;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
+    .sh-skill-pill {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.75rem;
+    }
     .sh-character-wrapper {
-        height: 500px;
-    }
-    .sh-skill-pill {
-        transform: scale(0.85); /* Shrink on smaller screens so they fit */
-    }
-}
-
-@media (max-width: 768px) {
-    .sh-skill-pill {
-        display: none; /* Too cluttered on mobile */
+        height: 450px;
+        margin-top: -300px;
     }
 }
