@@ -4201,3 +4201,28 @@ a {
         grid-template-columns: 1fr;
     }
 }
+
+/* Global Footer Styles */
+.cu-footer {
+    background-color: #000000;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+.cu-footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .cu-footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .cu-footer-grid {
+        grid-template-columns: 1fr;
+    }
+}

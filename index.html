@@ -11,6 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=Roboto+Mono:wght@400;500&display=swap"
         rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/opvs_favicon.png">
     <link rel="stylesheet" href="styles.css">
     <!-- GSAP / ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -22,8 +23,8 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-left">
-                <a href="#" class="logo">
-                    <span class="logo-text">OPVS<span class="logo-dot">.</span>ai</span>
+                <a href="#" class="logo" style="display: flex; align-items: center; gap: 0.5rem;">
+                    <img src="assets/opvs_logo.png" alt="OPVS Logo" style="height: 24px;">
                     <span class="logo-sub">AI Colleague</span>
                 </a>
             </div>
@@ -696,154 +697,6 @@
             </div>
         </section>
 
-        <!-- Block 9: Sticky UI Reveal -->
-        <section class="cu-sticky-section">
-            <div class="cu-container cu-sticky-container">
-                <div class="cu-sticky-left">
-                    <div class="cu-sticky-content">
-                        <div class="cu-eyebrow">THE OPVS ADVANTAGE</div>
-                        <h2 class="cu-section-title">AI doesn't just execute tasks. It studies your business.</h2>
-                        <p class="cu-section-subtitle">Every task an OPVS agent completes is automatically logged,
-                            analyzed, and synthesized into your shared workspace knowledge base. When you hire your next
-                            agent, they inherit the exact context of your company on day one.</p>
-
-                        <ul class="cu-sticky-features">
-                            <li>
-                                <div class="sf-title"><span class="check" style="color: var(--accent);">✓</span> 100%
-                                    Retained Knowledge</div>
-                                <div class="sf-desc">The LEARNINGS.md file captures every domain-specific preference.
-                                </div>
-                            </li>
-                            <li>
-                                <div class="sf-title"><span class="check" style="color: var(--accent);">✓</span> Full
-                                    Audit Trail</div>
-                                <div class="sf-desc">View every API call, email sent, and file modified by your agents.
-                                </div>
-                            </li>
-                            <li>
-                                <div class="sf-title"><span class="check" style="color: var(--accent);">✓</span>
-                                    Seamless Onboarding</div>
-                                <div class="sf-desc">New agents read your organization's context files before their
-                                    first heartbeat.</div>
-                            </li>
-                        </ul>
-
-                        <button class="btn btn-primary btn-large mt-6">Explore Platform features</button>
-                    </div>
-                </div>
-
-                <div class="cu-sticky-right">
-                    <div class="cu-scroll-card">
-                        <img src="assets/kanban_board.png" alt="AgentBoard Kanban" class="scroll-img">
-                    </div>
-                    <div class="cu-scroll-card">
-                        <img src="assets/learnings_md.png" alt="LEARNINGS Editor" class="scroll-img">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Block 7: Capabilities / Tools vs Employees -->
-        <section class="cu-capabilities-section">
-            <div class="cu-container">
-                <div class="cu-cap-header text-center mb-16">
-                    <h2 class="cu-section-title">Most businesses are adding AI tools.<br>You need AI employees.</h2>
-                </div>
-
-                <div class="cu-cap-grid">
-                    <div class="cu-cap-card">
-                        <div class="cap-icon">⚙️</div>
-                        <h3>Autonomy</h3>
-                        <p class="cap-bad"><strong>Tools:</strong> Wait for human prompts.</p>
-                        <p class="cap-good" style="color: var(--accent);"><strong>OPVS Agents:</strong> Check their
-                            boards and execute on a heartbeat schedule.</p>
-                    </div>
-                    <div class="cu-cap-card">
-                        <div class="cap-icon">🧠</div>
-                        <h3>Memory</h3>
-                        <p class="cap-bad"><strong>Tools:</strong> Forget everything between chat sessions.</p>
-                        <p class="cap-good" style="color: var(--accent);"><strong>OPVS Agents:</strong> Maintain a
-                            perpetual LEARNINGS.md context file.</p>
-                    </div>
-                    <div class="cu-cap-card">
-                        <div class="cap-icon">📊</div>
-                        <h3>Accountability</h3>
-                        <p class="cap-bad"><strong>Tools:</strong> Output invisible black-box text.</p>
-                        <p class="cap-good" style="color: var(--accent);"><strong>OPVS Agents:</strong> Log every action
-                            to AgentBoard for full auditability.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Block 8a: FAQ -->
-        <section class="cu-faq-section">
-            <div class="cu-container">
-                <div class="cu-faq-header text-center mb-12">
-                    <h2 class="cu-section-title">Frequently asked questions</h2>
-                </div>
-
-                <div class="cu-faq-list">
-                    <details class="cu-faq-item">
-                        <summary class="cu-faq-q">
-                            <span>How secure is my company data?</span>
-                            <span class="cu-faq-icon">+</span>
-                        </summary>
-                        <div class="cu-faq-a">
-                            <p>Enterprise-grade by default. OpenClaw supports deep VPC integrations, SOC2 compliance,
-                                and zero-data-retention modes. Your proprietary data never trains our base models.</p>
-                        </div>
-                    </details>
-
-                    <details class="cu-faq-item">
-                        <summary class="cu-faq-q">
-                            <span>Do I need coding experience?</span>
-                            <span class="cu-faq-icon">+</span>
-                        </summary>
-                        <div class="cu-faq-a">
-                            <p>None at all. OPVS Agents are configured using natural language SOUL.md files and
-                                instructed just like human employees via the AgentBoard chat interface.</p>
-                        </div>
-                    </details>
-
-                    <details class="cu-faq-item">
-                        <summary class="cu-faq-q">
-                            <span>How is OPVS different from OpenAI's GPTs?</span>
-                            <span class="cu-faq-icon">+</span>
-                        </summary>
-                        <div class="cu-faq-a">
-                            <p>GPTs are reactive chat wrappers. OPVS Agents are proactive, asynchronous workers running
-                                on the OpenClaw VM. They can execute background tasks, manage cloud infrastructure, and
-                                retain long-term memory across your entire workspace.</p>
-                        </div>
-                    </details>
-
-                    <details class="cu-faq-item">
-                        <summary class="cu-faq-q">
-                            <span>What happens if an agent makes a mistake?</span>
-                            <span class="cu-faq-icon">+</span>
-                        </summary>
-                        <div class="cu-faq-a">
-                            <p>Agents feature built-in 'Confidence Thresholds'. If an agent is unsure about a
-                                destructive action (like deleting a database table or sending a mass email), it pauses
-                                execution and pings a human manager for approval.</p>
-                        </div>
-                    </details>
-                </div>
-            </div>
-        </section>
-
-        <!-- Block 8b: Final CTA -->
-        <section class="cu-final-cta border-top">
-            <div class="cu-container text-center">
-                <h2 class="cu-massive-title"
-                    style="font-size: clamp(4rem, 8vw, 6rem); letter-spacing: -0.04em; max-width: 900px; margin: 0 auto;">
-                    Hire your first OPVS agent today.</h2>
-                <button class="btn btn-primary btn-large mt-8" style="padding: 1.5rem 3rem; font-size: 1.25rem;">Start
-                    Free Trial</button>
-            </div>
-        </section>
-
     </main>
 
     <!-- Global Footer -->
@@ -851,7 +704,7 @@
         <div class="cu-container">
             <div class="cu-footer-grid">
                 <div class="cu-footer-brand">
-                    <div class="logo font-heading text-2xl mb-4 font-bold">OPVS.ai</div>
+                    <img src="assets/opvs_logo.png" alt="OPVS Logo" style="height: 32px; margin-bottom: 1rem;">
                     <p class="footer-tag"
                         style="color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 250px;">The operating
                         system for autonomous AI employees.</p>
