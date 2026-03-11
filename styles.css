@@ -3325,6 +3325,18 @@ a {
     padding: 2rem;
 }
 
+.cu-prompt-left::before {
+    content: "";
+    position: absolute;
+    top: -10rem;
+    bottom: -10rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: 0;
+}
+
 .cu-prompt-right {
     flex: 1;
     display: flex;
@@ -3359,10 +3371,35 @@ a {
     align-items: center;
 }
 
+.tree-node::before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    width: 1px;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 1;
+}
+
+.tree-node::after {
+    content: "";
+    position: absolute;
+    top: 74px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid rgba(255, 255, 255, 0.2);
+    z-index: 1;
+}
+
 .top-node {
     top: 0;
     left: 200px;
     transform: translateX(-50%);
+}
+
+.top-node::before,
+.top-node::after {
+    display: none;
 }
 
 .tree-avatar {
@@ -3406,16 +3443,18 @@ a {
 }
 
 .tree-label {
-    margin-top: 10px;
+    margin-top: 18px;
     padding: 6px 16px;
     background: #ffffff;
     color: #000000;
     border: none;
-    border-radius: 100px;
+    border-radius: 6px;
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 600;
     white-space: nowrap;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
 }
 
 .cu-split-prompt-title {
