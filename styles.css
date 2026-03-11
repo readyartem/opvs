@@ -3281,7 +3281,7 @@ a {
 /* ----------------------------------------- */
 .cu-split-prompt-section {
     position: relative;
-    padding: 1.5rem 0;
+    padding: 0.5rem 0;
     background: var(--bg-primary);
 }
 
@@ -3315,8 +3315,8 @@ a {
 .cu-split-prompt-container::after {
     content: "";
     position: absolute;
-    top: -3rem;
-    bottom: -3rem;
+    top: -0.5rem;
+    bottom: -0.5rem;
     left: 50%;
     width: 1px;
     background: rgba(255, 255, 255, 0.15);
@@ -3336,8 +3336,8 @@ a {
 .cu-prompt-left::before {
     content: "";
     position: absolute;
-    top: -1.5rem;
-    bottom: -1.5rem;
+    top: -0.5rem;
+    bottom: -0.5rem;
     left: 50%;
     transform: translateX(-50%);
     width: 1px;
