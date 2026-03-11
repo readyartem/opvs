@@ -92,6 +92,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Human Skills Tabs Logic (Block 7) ---
+    const skillTabs = document.querySelectorAll('.cu-skill-item');
+    if (skillTabs.length > 0) {
+        skillTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all
+                skillTabs.forEach(t => t.classList.remove('active'));
+                // Add to clicked
+                tab.classList.add('active');
+
+                // Optional: Update right-side content based on data-tab attribute if needed later
+            });
+        });
+    }
+
     // --- Stats Count-Up Animation ---
     const statsSections = document.querySelectorAll('.cu-stat-section');
     const statNumbers = document.querySelectorAll('.stat-count-up');

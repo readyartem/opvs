@@ -3566,13 +3566,13 @@ a {
 }
 
 .cu-skill-item {
-    padding: 1rem 1.5rem;
+    padding: 1.25rem 1.5rem;
     border-radius: 12px;
     color: var(--text-secondary);
-    font-weight: 500;
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
     cursor: pointer;
     transition: all 0.2s ease;
     border: 1px solid transparent;
@@ -3580,14 +3580,13 @@ a {
 
 .cu-skill-item:hover {
     background: rgba(255, 255, 255, 0.03);
+    color: #ffffff;
 }
 
 .cu-skill-item.active {
     background: #ffffff;
     color: #000000;
     border-color: #ffffff;
-    flex-direction: column;
-    align-items: flex-start;
     gap: 0.5rem;
     box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
 }
@@ -3595,26 +3594,42 @@ a {
 .cu-skill-header {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1.25rem;
     width: 100%;
 }
 
-.cu-skill-item.active h4 {
+.cu-skill-item h4 {
     margin: 0;
     font-size: 1.1rem;
     font-weight: 600;
 }
 
 .cu-skill-icon {
-    font-size: 1.2rem;
+    width: 20px;
+    height: 20px;
+    stroke: var(--text-secondary);
+    transition: stroke 0.2s ease;
+}
+
+.cu-skill-item:hover .cu-skill-icon {
+    stroke: #ffffff;
+}
+
+.cu-skill-item.active .cu-skill-icon {
+    stroke: #000000;
 }
 
 .cu-skill-desc {
-    font-size: 0.9rem;
+    display: none;
+    font-size: 0.95rem;
     color: #333333;
-    line-height: 1.4;
+    line-height: 1.5;
     font-weight: 400;
     margin-top: 0.5rem;
+}
+
+.cu-skill-item.active .cu-skill-desc {
+    display: block;
 }
 
 /* UI Mockup styling */
