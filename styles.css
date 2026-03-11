@@ -4234,7 +4234,7 @@ a {
 .superhuman-section {
     position: relative;
     width: 100%;
-    padding: 3rem 0 0 0; /* Reduced top padding to move it up */
+    padding: 0 0 0 0; /* Remove top padding entirely */
     overflow: hidden;
     text-align: center;
     background-color: var(--bg-primary); /* Dark mode base */
@@ -4243,7 +4243,7 @@ a {
 .sh-title-area {
     position: relative;
     z-index: 10;
-    margin-top: -2rem; /* Bring the title even higher up */
+    margin-top: -3.5rem; /* Increase negative margin to tuck it tighter */
     margin-bottom: 2rem;
 }
 
