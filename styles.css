@@ -4247,9 +4247,9 @@ a {
 }
 
 .sh-title {
-    font-size: clamp(3rem, 7vw, 6rem); /* Exactly matching .hero-title */
-    letter-spacing: -0.04em;
-    line-height: 1;
+    font-size: clamp(2rem, 4vw, 3rem); /* Matching "Do more than humanly possible" */
+    letter-spacing: -0.02em;
+    line-height: 1.1;
     color: var(--text-primary);
 }
 
@@ -4262,7 +4262,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin-top: -450px; /* Overlap right onto the marquee rows */
+    margin-top: -550px; /* Move the agent significantly higher up */
     pointer-events: none; /* Let clicks pass through to marquee */
 }
 
@@ -4346,8 +4346,8 @@ a {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 300px; /* High enough to partially cover the bottom elements */
-    background: linear-gradient(to bottom, transparent, var(--bg-primary) 80%, var(--bg-primary));
+    height: 500px; /* Increased height to start blur earlier */
+    background: linear-gradient(to bottom, transparent, var(--bg-primary) 70%, var(--bg-primary));
     z-index: 10;
     pointer-events: none;
 }
