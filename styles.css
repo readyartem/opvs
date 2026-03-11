@@ -3677,7 +3677,6 @@ a {
     right: 100px;
     z-index: 20;
     height: 40px;
-    width: 340px;
     background: rgba(247, 202, 24, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 0 1rem;
@@ -3759,7 +3758,6 @@ a {
     padding: 2rem;
     width: 100%;
     max-width: 600px;
-    height: 380px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     position: relative;
 }
