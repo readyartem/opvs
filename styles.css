@@ -3673,8 +3673,8 @@ a {
 
 .agent-typing-bubble {
     position: absolute;
-    bottom: 8%;
-    right: 60%;
+    bottom: 4%;
+    right: 65%;
     z-index: 20;
     background: rgba(247, 202, 24, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -3715,6 +3715,7 @@ a {
 .typing-success {
     display: none;
     color: #000000;
+    margin-top: 3px;
     animation: popSuccess 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
