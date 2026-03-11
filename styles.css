@@ -4226,3 +4226,113 @@ a {
         grid-template-columns: 1fr;
     }
 }
+
+/* -------------------------------------------------------------------------- */
+/* SUPERHUMAN AGENTS SECTION                                                */
+/* -------------------------------------------------------------------------- */
+
+.superhuman-section {
+    position: relative;
+    width: 100%;
+    padding: 8rem 0 0 0;
+    overflow: hidden;
+    text-align: center;
+    background-color: var(--bg-primary); /* Dark mode base */
+}
+
+.sh-title-area {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 2rem;
+}
+
+.sh-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--text-primary);
+}
+
+.sh-character-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 700px; /* Consistent baseline for floating elements */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.sh-character-wrapper .giant-character {
+    position: relative;
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    object-position: bottom center;
+    z-index: 5;
+}
+
+/* Floating Skill Pills */
+.sh-skill-pill {
+    position: absolute;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(4px);
+    z-index: 2;
+    white-space: nowrap;
+    animation: slowFloat 8s ease-in-out infinite alternate;
+}
+
+/* Randomize floating slightly */
+.sh-skill-pill:nth-child(2n) {
+    animation-duration: 9s;
+    animation-delay: -2s;
+}
+.sh-skill-pill:nth-child(3n) {
+    animation-duration: 11s;
+    animation-delay: -4s;
+}
+.sh-skill-pill:nth-child(5n) {
+    animation-duration: 7s;
+    animation-delay: -1s;
+}
+
+@keyframes slowFloat {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-15px) rotate(2deg); }
+}
+
+/* Black Gradient Fade at the Bottom */
+.sh-gradient-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px; /* High enough to partially cover the bottom elements */
+    background: linear-gradient(to bottom, transparent, var(--bg-primary) 80%, var(--bg-primary));
+    z-index: 10;
+    pointer-events: none;
+}
+
+@media (max-width: 1200px) {
+    .sh-character-wrapper {
+        height: 500px;
+    }
+    .sh-skill-pill {
+        transform: scale(0.85); /* Shrink on smaller screens so they fit */
+    }
+}
+
+@media (max-width: 768px) {
+    .sh-skill-pill {
+        display: none; /* Too cluttered on mobile */
+    }
+}
