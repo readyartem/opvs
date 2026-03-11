@@ -3987,14 +3987,22 @@ a {
 
 
 .collab-doc-ui h4 {
-    margin-bottom: 0.75rem;
-    font-size: 1.1rem;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 0.70rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0;
 }
 
 .collab-doc-text {
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     line-height: 1.6;
+    margin-top: 2rem;
     margin-bottom: 1rem;
     position: relative;
 }
@@ -4065,8 +4073,8 @@ a {
 }
 
 .purple-cursor {
-    top: 35px;
-    left: 10px;
+    top: 30px;
+    left: -15px;
     animation-delay: 1s;
 }
 
@@ -4098,12 +4106,13 @@ a {
 
 .org-header-label {
     position: absolute;
-    top: 1rem;
+    top: 1.5rem;
     left: 1.5rem;
-    font-size: 0.7rem;
+    font-size: 0.70rem;
     color: var(--text-secondary);
     letter-spacing: 0.05em;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 .org-level-top {
@@ -4111,6 +4120,7 @@ a {
     flex-direction: column;
     align-items: center;
     margin-bottom: 0px;
+    margin-top: 2rem;
     z-index: 2;
 }
 
