@@ -272,33 +272,35 @@
                         </div>
 
                         <!-- Connecting Lines (SVG for crisp dark styling matching ClickUp) -->
-                        <svg class="tree-svg-lines" viewBox="0 0 400 300" preserveAspectRatio="none">
-                            <!-- Main trunk -->
-                            <path class="tree-path" d="M 200 40 L 200 90" stroke="rgba(255, 255, 255, 0.15)"
+                        <svg class="tree-svg-lines" viewBox="0 0 400 400" preserveAspectRatio="none">
+                            <!-- Main trunk straight down -->
+                            <path class="tree-path" d="M 200 0 L 200 120" stroke="rgba(255, 255, 255, 0.15)"
                                 stroke-width="1" fill="none" />
-                            <!-- Branches branching out smoothly -->
-                            <path class="tree-path" d="M 200 90 C 200 130, 80 120, 80 160"
+                            <!-- Sweeping left curve to Copywriting -->
+                            <path class="tree-path" d="M 200 120 C 150 120, 90 150, 90 260"
                                 stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" fill="none" />
-                            <path class="tree-path" d="M 200 90 C 200 130, 320 120, 320 160"
+                            <!-- Sweeping right curve to Campaign Lifecycle -->
+                            <path class="tree-path" d="M 200 120 C 250 120, 310 150, 310 260"
                                 stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" fill="none" />
-                            <path class="tree-path" d="M 200 90 L 200 140" stroke="rgba(255, 255, 255, 0.15)"
+                            <!-- Center line straight down down to Email Design -->
+                            <path class="tree-path" d="M 200 120 L 200 200" stroke="rgba(255, 255, 255, 0.15)"
                                 stroke-width="1" fill="none" />
                         </svg>
 
-                        <!-- Middle Row Nodes perfectly overlapping the SVG paths at 80, 200, 320 -->
-                        <div class="tree-row">
+                        <!-- Middle Row Nodes perfectly overlapping the new absolute coordinates at (90, 260), (200, 200), (310, 260) -->
+                        <div class="tree-nodes">
                             <div class="tree-node tree-node-left">
                                 <img src="assets/agent_avatar_1_yellow.png" alt="Copywriter Agent" class="tree-avatar">
-                                <div class="tree-label"><span style="color:var(--primary);">◉</span> Copywriting</div>
+                                <div class="tree-label">Copywriting</div>
                             </div>
                             <div class="tree-node tree-node-center">
                                 <img src="assets/agent_avatar_2_yellow.png" alt="Email Design Agent"
                                     class="tree-avatar">
-                                <div class="tree-label"><span style="color:var(--accent);">◉</span> Email Design</div>
+                                <div class="tree-label">Email Design</div>
                             </div>
                             <div class="tree-node tree-node-right">
                                 <img src="assets/agent_email_yellow.png" alt="Campaign Agent" class="tree-avatar">
-                                <div class="tree-label"><span style="color:#bd93f9;">◉</span> Campaign lifecycle</div>
+                                <div class="tree-label">Campaign lifecycle</div>
                             </div>
                         </div>
                     </div>
@@ -306,13 +308,14 @@
 
                 <div class="cu-prompt-right">
                     <div class="cu-eyebrow"
-                        style="color: #bd93f9; font-family: monospace; letter-spacing: 0.1em; text-transform: uppercase;">
+                        style="color: #f7ca18; font-family: monospace; letter-spacing: 0.1em; text-transform: uppercase;">
                         AGENTS IN MINUTES</div>
-                    <h2 class="cu-split-prompt-title">One prompt spins up an entire team</h2>
+                    <h2 class="cu-split-prompt-title" style="max-width: 500px;">One prompt spins up an entire team</h2>
                     <p class="cu-section-subtitle">Your goals, workflows, and frustrations - automatically delegated to
                         a team of specialized OPVS agents.</p>
                     <button class="btn btn-large mt-6"
-                        style="background: #ffffff; color: #000000; font-weight: 600;">Explore all agents</button>
+                        style="background: #ffffff; color: #000000; font-weight: 700; width: 100%; max-width: 450px; padding: 1.25rem 2rem; border-radius: 100px; font-size: 1.1rem; letter-spacing: -0.01em;">Explore
+                        all agents</button>
                 </div>
             </div>
         </section>

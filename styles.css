@@ -3280,9 +3280,27 @@ a {
 /* New Block 6: One Prompt Team Split Block  */
 /* ----------------------------------------- */
 .cu-split-prompt-section {
+    position: relative;
     padding: 8rem 0;
     background: var(--bg-primary);
-    border-top: 1px solid var(--border-color);
+}
+
+.cu-split-prompt-section::before,
+.cu-split-prompt-section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.15) 80%, transparent);
+}
+
+.cu-split-prompt-section::before {
+    top: 0;
+}
+
+.cu-split-prompt-section::after {
+    bottom: 0;
 }
 
 .cu-split-prompt-container {
@@ -3295,15 +3313,7 @@ a {
 
 /* Vertical separating stripe for the layout */
 .cu-split-prompt-container::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 1px;
-    background: var(--border-color);
-    transform: translateX(-50%);
-    z-index: 0;
+    display: none;
 }
 
 .cu-prompt-left {
@@ -3325,7 +3335,7 @@ a {
 .tree-diagram {
     position: relative;
     width: 400px;
-    height: 350px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -3342,7 +3352,7 @@ a {
 }
 
 .tree-node {
-    position: relative;
+    position: absolute;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -3350,7 +3360,9 @@ a {
 }
 
 .top-node {
-    margin-top: 0;
+    top: 0;
+    left: 200px;
+    transform: translateX(-50%);
 }
 
 .tree-avatar {
@@ -3363,53 +3375,44 @@ a {
     background: #0a0a0c;
 }
 
-.tree-row {
+.tree-nodes {
     position: absolute;
-    bottom: 10px;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 120px;
+    height: 100%;
+    pointer-events: none;
 }
 
 .tree-node-left {
-    position: absolute;
-    left: 80px;
-    bottom: 0;
-    transform: translateX(-50%);
+    top: 260px;
+    left: 90px;
+    transform: translate(-50%, -50%);
 }
 
 .tree-node-center {
-    position: absolute;
+    top: 200px;
     left: 200px;
-    bottom: 20px;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
 }
 
 .tree-node-right {
-    position: absolute;
-    left: 320px;
-    bottom: 0;
-    transform: translateX(-50%);
+    top: 260px;
+    left: 310px;
+    transform: translate(-50%, -50%);
 }
 
 .tree-label {
-    margin-top: 8px;
-    padding: 2px 10px 2px 4px;
+    margin-top: 10px;
+    padding: 6px 16px;
     background: #ffffff;
     color: #000000;
     border: none;
     border-radius: 100px;
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 0.85rem;
+    font-weight: 700;
     white-space: nowrap;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.tree-label span {
-    font-size: 1.1rem;
-    line-height: 1;
 }
 
 .cu-split-prompt-title {
