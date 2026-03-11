@@ -3674,7 +3674,7 @@ a {
 .agent-typing-bubble {
     position: absolute;
     bottom: -15px;
-    right: 280px;
+    right: 100px;
     z-index: 20;
     height: 40px;
     background: rgba(247, 202, 24, 0.8);
