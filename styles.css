@@ -3871,7 +3871,7 @@ a {
 .cu-collab-section {
     position: relative;
     padding: 0 0 6rem;
-    margin-top: 1.5rem;
+    margin-top: -1rem;
     background: var(--bg-primary);
 }
 
@@ -3904,11 +3904,11 @@ a {
 .cu-collab-grid::after {
     content: "";
     position: absolute;
-    top: -0.5rem;
-    bottom: -0.5rem;
+    top: 0;
+    bottom: 0;
     left: 50%;
     width: 1px;
-    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.15) 80%, transparent);
+    background: rgba(255, 255, 255, 0.15);
     transform: translateX(-50%);
     z-index: 0;
 }
@@ -3962,7 +3962,22 @@ a {
     max-width: 400px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
 }
+
+.collab-doc-ui::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 70%;
+    height: 60%;
+    background: linear-gradient(135deg, transparent 0%, transparent 20%, var(--bg-primary) 100%);
+    pointer-events: none;
+    z-index: 5;
+}
+
 
 .collab-doc-ui h4 {
     margin-bottom: 0.75rem;
@@ -3987,15 +4002,11 @@ a {
 .collab-doc-list li {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 0.75rem;
+    gap: 8px;
+    margin-bottom: 0.25rem;
     position: relative;
-    padding: 0.5rem;
+    padding: 0.25rem 0.5rem;
     border-radius: 6px;
-}
-
-.collab-doc-list li:hover {
-    background: rgba(255, 255, 255, 0.05);
 }
 
 /* Simulated Cursors */
@@ -4018,13 +4029,14 @@ a {
 }
 
 .cursor-label {
-    background: currentColor;
-    color: #fff;
-    padding: 4px 8px;
-    border-radius: 4px;
+    background: #0a0a0c;
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-top-left-radius: 0;
-    font-size: 0.7rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 500;
     display: flex;
     align-items: center;
     gap: 6px;
