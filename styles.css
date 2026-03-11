@@ -4243,7 +4243,7 @@ a {
 .sh-title-area {
     position: relative;
     z-index: 10;
-    margin-top: -2.5rem; /* Eased off the negative margin to add slight space */
+    margin-top: -1rem; /* Added notably more space above the text */
     margin-bottom: 2rem;
 }
 
