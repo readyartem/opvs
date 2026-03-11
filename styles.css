@@ -3658,9 +3658,9 @@ a {
 
 .cu-bhc-overlay-image {
     position: absolute;
-    bottom: -2rem;
-    right: -4rem;
-    width: 450px;
+    bottom: -4rem;
+    right: -6rem;
+    width: 550px;
     height: auto;
     z-index: 10;
     pointer-events: none;
@@ -3679,9 +3679,9 @@ a {
     }
 
     .cu-bhc-overlay-image {
-        width: 300px;
-        bottom: 0;
-        right: -2rem;
+        width: 350px;
+        bottom: -2rem;
+        right: -3rem;
     }
 }
 
