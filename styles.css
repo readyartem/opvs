@@ -3610,7 +3610,7 @@ a {
 }
 
 .cu-skill-item.active .cu-skill-icon {
-    stroke: var(--accent);
+    stroke: #f7ca18;
 }
 
 .cu-skill-desc {
@@ -4024,7 +4024,7 @@ a {
     content: "↖";
     font-size: 1.25rem;
     line-height: 1;
-    color: var(--accent) !important;
+    color: #f7ca18 !important;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     margin-bottom: 2px;
 }
