@@ -3566,7 +3566,7 @@ a {
 }
 
 .cu-skill-item {
-    padding: 1.25rem 1.5rem;
+    padding: 0.875rem 1.25rem;
     border-radius: 12px;
     color: var(--text-secondary);
     display: flex;
@@ -3587,6 +3587,7 @@ a {
     background: #ffffff;
     color: #000000;
     border-color: #ffffff;
+    padding: 1.25rem 1.5rem;
     gap: 0.5rem;
     box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
 }
@@ -3672,10 +3673,10 @@ a {
 
 .agent-typing-bubble {
     position: absolute;
-    bottom: 12%;
-    right: 55%;
+    bottom: 8%;
+    right: 60%;
     z-index: 20;
-    background: rgba(247, 202, 24, 0.65);
+    background: rgba(247, 202, 24, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 0.6rem 1rem;
     border-radius: 12px;

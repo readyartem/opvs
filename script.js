@@ -130,11 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let typewriterTimeout;
 
         const typewriterMessages = {
-            'email': 'Drafting weekly update to the team...',
-            'dm': 'Crafting personalized connection request...',
-            'task': 'Checking Jira ticket priorities...',
-            'events': 'Finding optimal 30min slot on Google Calendar...',
-            'mentions': 'Searching Notion for Q3 Roadmap...'
+            'email': 'Drafting weekly update to the team.',
+            'dm': 'Crafting personalized connection request.',
+            'task': 'Checking Jira ticket priorities.',
+            'events': 'Finding optimal 30min slot on Google Calendar.',
+            'mentions': 'Searching Notion for Q3 Roadmap.'
         };
 
         function updateTypewriter(tabId) {
