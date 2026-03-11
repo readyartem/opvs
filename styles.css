@@ -3275,3 +3275,629 @@ a {
         text-align: center;
     }
 }
+
+/* ----------------------------------------- */
+/* New Block 6: One Prompt Team Split Block  */
+/* ----------------------------------------- */
+.cu-split-prompt-section {
+    padding: 8rem 0;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+}
+
+.cu-split-prompt-container {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.cu-prompt-left {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.cu-prompt-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tree-diagram {
+    position: relative;
+    width: 400px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tree-svg-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.tree-node {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-node {
+    margin-top: 0;
+}
+
+.tree-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #1a1a1f;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    background: #0a0a0c;
+}
+
+.tree-row {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.tree-label {
+    margin-top: 8px;
+    padding: 4px 10px;
+    background: rgba(10, 10, 12, 0.9);
+    border: 1px solid var(--border-color);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tree-node.center-node {
+    transform: translateY(-20px);
+}
+
+@media (max-width: 1024px) {
+    .cu-split-prompt-container {
+        flex-direction: column;
+    }
+}
+
+/* ----------------------------------------- */
+/* New Block 7: Human Skills Bento           */
+/* ----------------------------------------- */
+.cu-human-skills-section {
+    padding: 6rem 0;
+    background: var(--bg-primary);
+}
+
+.cu-hs-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+    gap: 2rem;
+}
+
+.cu-hs-left {
+    flex: 1;
+}
+
+.cu-hs-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cu-quote-block {
+    max-width: 450px;
+    border-left: 2px solid var(--border-color);
+    padding-left: 1.5rem;
+}
+
+.cu-quote-text {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.cu-quote-author {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.cu-bento-hero-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 3rem;
+    display: flex;
+    gap: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.cu-bhc-left {
+    flex: 1;
+    max-width: 400px;
+}
+
+.cu-bhc-right {
+    flex: 1.5;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cu-bhc-title {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 2.5rem;
+}
+
+.cu-skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cu-skill-item {
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.cu-skill-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.cu-skill-item.active {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.cu-skill-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.cu-skill-item.active h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.cu-skill-icon {
+    font-size: 1.2rem;
+}
+
+.cu-skill-desc {
+    font-size: 0.9rem;
+    color: #333333;
+    line-height: 1.4;
+    font-weight: 400;
+    margin-top: 0.5rem;
+}
+
+/* UI Mockup styling */
+.cu-ui-mockup-window {
+    background: #0a0a0c;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.mockup-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mockup-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.mockup-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.mockup-task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.mockup-task-list li::before {
+    content: "•";
+    color: var(--border-color);
+    margin-right: 10px;
+}
+
+.mockup-email-compose {
+    background: #1a1a1f;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.mockup-email-subject {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.email-icon {
+    background: var(--accent);
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.mockup-email-to {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.mockup-email-body {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.mockup-email-body p {
+    margin-bottom: 1rem;
+}
+
+.cu-bhc-overlay-image {
+    position: absolute;
+    bottom: -3rem;
+    right: -2rem;
+    width: 300px;
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+    filter: drop-shadow(-10px 10px 30px rgba(0, 0, 0, 0.8));
+}
+
+@media (max-width: 1024px) {
+    .cu-hs-header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cu-bento-hero-card {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .cu-bhc-overlay-image {
+        width: 200px;
+        bottom: -2rem;
+        right: -1rem;
+    }
+}
+
+/* ----------------------------------------- */
+/* New Block 8: Collaboration Twin Cards     */
+/* ----------------------------------------- */
+.cu-collab-section {
+    padding: 2rem 0 6rem;
+    background: var(--bg-primary);
+}
+
+.cu-collab-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.cu-collab-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+    border-radius: 24px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.cu-card-mockup-top {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.02);
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+
+.cu-card-content-bottom {
+    padding: 2rem;
+}
+
+.cu-card-content-bottom h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.cu-card-content-bottom p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+/* Collab Doc UI Mockup */
+.collab-doc-ui {
+    background: var(--bg-primary);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+}
+
+.collab-doc-ui h4 {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.collab-doc-text {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.collab-doc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.collab-doc-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+.collab-doc-list li:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Simulated Cursors */
+.collab-cursor {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    z-index: 10;
+    animation: cursor-float 4s ease-in-out infinite alternate;
+}
+
+.collab-cursor::before {
+    content: "↖";
+    font-size: 1rem;
+    line-height: 1;
+    color: inherit;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2px;
+}
+
+.cursor-label {
+    background: currentColor;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    font-size: 0.7rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tiny-avatar {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    position: relative;
+    object-fit: cover;
+}
+
+.blue-cursor {
+    color: #007aff;
+    top: 50%;
+    right: 15%;
+}
+
+.purple-cursor {
+    color: #bd93f9;
+    top: 20%;
+    left: 45%;
+    animation-delay: 1s;
+}
+
+@keyframes cursor-float {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(15px, -10px);
+    }
+}
+
+/* Mini Org Chart Mockup */
+.mini-org-chart {
+    background: var(--bg-primary);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.org-header-label {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.org-level-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0px;
+    z-index: 2;
+}
+
+.org-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    margin-bottom: 8px;
+    background: #0a0a0c;
+    object-fit: cover;
+}
+
+.org-name {
+    font-size: 0.75rem;
+    color: var(--text-primary);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.org-lines {
+    width: 250px;
+    height: 30px;
+    border-top: 1px solid var(--border-color);
+    position: relative;
+    margin: 20px 0;
+}
+
+.org-lines::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 1px;
+    height: 20px;
+    background: var(--border-color);
+}
+
+.org-branch {
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 20px;
+    background: var(--border-color);
+}
+
+.org-branch.left {
+    left: 0;
+}
+
+.org-branch.center {
+    left: 50%;
+}
+
+.org-branch.right {
+    right: 0;
+}
+
+.org-level-bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.org-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+}
+
+@media (max-width: 1024px) {
+    .cu-collab-grid {
+        grid-template-columns: 1fr;
+    }
+}
