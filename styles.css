@@ -3932,7 +3932,7 @@ a {
     background: transparent;
     min-height: 250px;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     padding: 3rem 1rem;
     border-bottom: none;
@@ -3966,11 +3966,13 @@ a {
     padding: 1.5rem;
     width: 100%;
     max-width: 400px;
-    height: 380px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .collab-doc-ui::after {
@@ -3987,22 +3989,14 @@ a {
 
 
 .collab-doc-ui h4 {
-    position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
-    font-size: 0.70rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    margin: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
 }
 
 .collab-doc-text {
     font-size: 0.9rem;
-    color: var(--text-primary);
+    color: var(--text-secondary);
     line-height: 1.6;
-    margin-top: 2rem;
     margin-bottom: 1rem;
     position: relative;
 }
@@ -4073,8 +4067,8 @@ a {
 }
 
 .purple-cursor {
-    top: 30px;
-    left: -15px;
+    top: 35px;
+    left: 10px;
     animation-delay: 1s;
 }
 
@@ -4095,24 +4089,23 @@ a {
     padding: 1.5rem;
     width: 100%;
     max-width: 400px;
-    height: 380px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     position: relative;
 }
 
 .org-header-label {
     position: absolute;
-    top: 1.5rem;
+    top: 1rem;
     left: 1.5rem;
-    font-size: 0.70rem;
+    font-size: 0.7rem;
     color: var(--text-secondary);
     letter-spacing: 0.05em;
     font-weight: 600;
-    text-transform: uppercase;
 }
 
 .org-level-top {
@@ -4120,7 +4113,6 @@ a {
     flex-direction: column;
     align-items: center;
     margin-bottom: 0px;
-    margin-top: 2rem;
     z-index: 2;
 }
 
