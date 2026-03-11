@@ -4235,7 +4235,7 @@ a {
     position: relative;
     width: 100%;
     padding: 0 0 0 0; /* Remove top padding entirely */
-    overflow: hidden;
+    /* Removed overflow: hidden so the title can escape the top bounds safely */
     text-align: center;
     background-color: var(--bg-primary); /* Dark mode base */
 }
@@ -4243,15 +4243,16 @@ a {
 .sh-title-area {
     position: relative;
     z-index: 10;
-    margin-top: -3.5rem; /* Increase negative margin to tuck it tighter */
+    margin-top: -2.5rem; /* Eased off the negative margin to add slight space */
     margin-bottom: 2rem;
 }
 
 .sh-title {
     font-size: clamp(2rem, 4vw, 3rem); /* Matching "Do more than humanly possible" */
     letter-spacing: -0.02em;
-    line-height: 1.1;
+    line-height: 1.2;
     color: var(--text-primary);
+    white-space: pre-wrap; /* Ensure text behaves */
 }
 
 .sh-character-wrapper {
@@ -4287,7 +4288,7 @@ a {
     flex-direction: column;
     gap: 1.5rem;
     padding: 3rem 0 6rem 0; /* Extra bottom padding behind agent */
-    overflow: hidden;
+    overflow: hidden; /* Added here to contain horizontally */
     /* Fade out the left and right edges smoothly */
     -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
