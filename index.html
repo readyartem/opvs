@@ -271,20 +271,17 @@
                             <img src="assets/agent_email_yellow.png" alt="Manager Agent" class="tree-avatar">
                         </div>
 
-                        <!-- Connecting Lines (SVG for crisp dark styling matching ClickUp diamond graph) -->
-                        <svg class="tree-svg-lines" viewBox="0 0 400 450" preserveAspectRatio="none">
-                            <!-- Center vertical spine from top to bottom -->
-                            <path class="tree-path" d="M 200 0 L 200 450" stroke="rgba(255, 255, 255, 0.15)"
-                                stroke-width="1" fill="none" />
-
+                        <!-- Connecting Lines (SVG for crisp dark styling matching ClickUp diagonal & vertical curves) -->
+                        <svg class="tree-svg-lines" viewBox="0 0 400 520" preserveAspectRatio="none">
                             <!-- Left diamond curve -->
-                            <path class="tree-path" d="M 200 100 C 130 100, 80 150, 80 230 C 80 310, 130 360, 200 360"
-                                stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" fill="none" />
+                            <path class="tree-path"
+                                d="M 200 120 L 100 160 Q 80 168 80 190 L 80 400 Q 80 422 100 430 L 200 470"
+                                stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" fill="none" />
 
                             <!-- Right diamond curve -->
                             <path class="tree-path"
-                                d="M 200 100 C 270 100, 320 150, 320 230 C 320 310, 270 360, 200 360"
-                                stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" fill="none" />
+                                d="M 200 120 L 300 160 Q 320 168 320 190 L 320 400 Q 320 422 300 430 L 200 470"
+                                stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" fill="none" />
                         </svg>
 
                         <!-- Absolute HTML Nodes perfectly overlapping the SVG anchors -->

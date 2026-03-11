@@ -3306,7 +3306,7 @@ a {
 .cu-split-prompt-container {
     display: flex;
     gap: 4rem;
-    align-items: center;
+    align-items: stretch;
     position: relative;
     padding: 2rem 0;
 }
@@ -3328,8 +3328,8 @@ a {
 .cu-prompt-left::before {
     content: "";
     position: absolute;
-    top: -5rem;
-    bottom: -5rem;
+    top: -7rem;
+    bottom: -7rem;
     left: 50%;
     transform: translateX(-50%);
     width: 1px;
@@ -3347,7 +3347,7 @@ a {
 .tree-diagram {
     position: relative;
     width: 400px;
-    height: 400px;
+    height: 520px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -3377,7 +3377,7 @@ a {
     top: 60px;
     width: 1px;
     height: 14px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.4);
     z-index: 1;
 }
 
@@ -3387,12 +3387,12 @@ a {
     top: 74px;
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
-    border-top: 4px solid rgba(255, 255, 255, 0.2);
+    border-top: 4px solid rgba(255, 255, 255, 0.4);
     z-index: 1;
 }
 
 .top-node {
-    top: 0;
+    top: 30px;
     left: 200px;
     transform: translateX(-50%);
 }
@@ -3423,23 +3423,23 @@ a {
 
 .tree-node-left {
     position: absolute;
-    top: 230px;
+    top: 250px;
     left: 80px;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 }
 
 .tree-node-center {
     position: absolute;
-    top: 160px;
+    top: 180px;
     left: 200px;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 }
 
 .tree-node-right {
     position: absolute;
-    top: 230px;
+    top: 250px;
     left: 320px;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 }
 
 .tree-label {
