@@ -3308,7 +3308,7 @@ a {
     gap: 4rem;
     align-items: stretch;
     position: relative;
-    padding: 2rem 0;
+    padding: 0;
 }
 
 /* Vertical separating stripe for the layout */
@@ -3385,7 +3385,7 @@ a {
     top: 60px;
     width: 1px;
     height: 14px;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
     z-index: 1;
 }
 
@@ -3395,7 +3395,7 @@ a {
     top: 74px;
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
-    border-top: 4px solid rgba(255, 255, 255, 0.4);
+    border-top: 4px solid rgba(255, 255, 255, 0.15);
     z-index: 1;
 }
 
@@ -3452,10 +3452,10 @@ a {
 
 .tree-label {
     margin-top: 18px;
-    padding: 6px 16px;
+    padding: 4px 12px;
     background: #0a0a0c;
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 4px;
     font-size: 0.85rem;
     font-weight: 500;
