@@ -124,6 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Initialize Typewriter Logic
         const typewriterElement = document.getElementById('agent-typewriter');
+        const typingLoader = document.getElementById('typing-loader');
+        const typingSuccess = document.getElementById('typing-success');
+        const typingCursor = document.getElementById('typing-cursor');
         let typewriterTimeout;
 
         const typewriterMessages = {
@@ -138,20 +141,33 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!typewriterElement) return;
 
             const message = typewriterMessages[tabId] || 'Processing request...';
+
+            // Reset state
             typewriterElement.textContent = '';
             clearTimeout(typewriterTimeout);
+
+            if (typingLoader) typingLoader.style.display = 'inline-flex';
+            if (typingSuccess) typingSuccess.style.display = 'none';
+            if (typingCursor) typingCursor.style.display = 'inline-block';
 
             let i = 0;
             function typeWriter() {
                 if (i < message.length) {
                     typewriterElement.textContent += message.charAt(i);
                     i++;
-                    typewriterTimeout = setTimeout(typeWriter, 35); // Fast typing speed
+                    // Randomize typing speed slightly for realism (20ms - 50ms)
+                    const speed = Math.random() * (50 - 20) + 20;
+                    typewriterTimeout = setTimeout(typeWriter, speed);
+                } else {
+                    // Typing finished
+                    if (typingLoader) typingLoader.style.display = 'none';
+                    if (typingCursor) typingCursor.style.display = 'none';
+                    if (typingSuccess) typingSuccess.style.display = 'inline-block';
                 }
             }
 
             // Start typing shortly after tab switch
-            typewriterTimeout = setTimeout(typeWriter, 250);
+            typewriterTimeout = setTimeout(typeWriter, 400);
         }
 
         // Trigger first state on load

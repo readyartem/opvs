@@ -3672,20 +3672,24 @@ a {
 
 .agent-typing-bubble {
     position: absolute;
-    bottom: 25%;
-    right: 80%;
-    background: rgba(10, 10, 12, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.75rem 1rem;
-    border-radius: 12px 12px 0 12px;
-    font-size: 0.9rem;
-    color: #ffffff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
+    bottom: 50%;
+    right: 35%;
+    background: rgba(247, 202, 24, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 0.6rem 1rem;
+    border-radius: 20px 20px 20px 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #000000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
     white-space: nowrap;
     opacity: 0;
     transform: translateY(10px);
     animation: bubbleAppear 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 @keyframes bubbleAppear {
@@ -3695,10 +3699,38 @@ a {
     }
 }
 
+.typing-loader {
+    animation: spinLoader 1s linear infinite;
+    display: inline-flex;
+}
+
+@keyframes spinLoader {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.typing-success {
+    display: none;
+    color: #000000;
+    animation: popSuccess 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popSuccess {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 .typing-cursor {
     display: inline-block;
     width: 2px;
-    background-color: #fff;
+    height: 14px;
+    background-color: #000;
     margin-left: 2px;
     animation: blinkCursor 1s step-end infinite;
 }
