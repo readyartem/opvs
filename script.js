@@ -139,20 +139,30 @@ document.addEventListener('DOMContentLoaded', () => {
         function updateTypewriter(tabId) {
             if (!typewriterElement) return;
 
-            const message = typewriterMessages[tabId] || 'Processing request...';
+            const fullMessage = typewriterMessages[tabId] || 'Processing request...';
 
-            // Reset state
-            typewriterElement.textContent = '';
+            // Find the end of the first word
+            const firstSpaceIndex = fullMessage.indexOf(' ');
+            let startText = '';
+            let typeIndex = 0;
+
+            if (firstSpaceIndex !== -1) {
+                // Pre-fill the first word (including the space)
+                startText = fullMessage.substring(0, firstSpaceIndex + 1);
+                typeIndex = firstSpaceIndex + 1;
+            }
+
+            // Reset state with the pre-filled word
+            typewriterElement.textContent = startText;
             clearTimeout(typewriterTimeout);
 
             if (typingLoader) typingLoader.style.display = 'inline-flex';
             if (typingSuccess) typingSuccess.style.display = 'none';
 
-            let i = 0;
             function typeWriter() {
-                if (i < message.length) {
-                    typewriterElement.textContent += message.charAt(i);
-                    i++;
+                if (typeIndex < fullMessage.length) {
+                    typewriterElement.textContent += fullMessage.charAt(typeIndex);
+                    typeIndex++;
                     // Randomize typing speed slightly for realism (20ms - 50ms)
                     const speed = Math.random() * (50 - 20) + 20;
                     typewriterTimeout = setTimeout(typeWriter, speed);
