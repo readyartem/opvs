@@ -3385,20 +3385,23 @@ a {
 }
 
 .tree-node-left {
-    top: 260px;
-    left: 90px;
+    position: absolute;
+    top: 230px;
+    left: 80px;
     transform: translate(-50%, -50%);
 }
 
 .tree-node-center {
-    top: 200px;
+    position: absolute;
+    top: 160px;
     left: 200px;
     transform: translate(-50%, -50%);
 }
 
 .tree-node-right {
-    top: 260px;
-    left: 310px;
+    position: absolute;
+    top: 230px;
+    left: 320px;
     transform: translate(-50%, -50%);
 }
 

@@ -271,23 +271,23 @@
                             <img src="assets/agent_email_yellow.png" alt="Manager Agent" class="tree-avatar">
                         </div>
 
-                        <!-- Connecting Lines (SVG for crisp dark styling matching ClickUp) -->
-                        <svg class="tree-svg-lines" viewBox="0 0 400 400" preserveAspectRatio="none">
-                            <!-- Main trunk straight down -->
-                            <path class="tree-path" d="M 200 0 L 200 120" stroke="rgba(255, 255, 255, 0.15)"
+                        <!-- Connecting Lines (SVG for crisp dark styling matching ClickUp diamond graph) -->
+                        <svg class="tree-svg-lines" viewBox="0 0 400 450" preserveAspectRatio="none">
+                            <!-- Center vertical spine from top to bottom -->
+                            <path class="tree-path" d="M 200 0 L 200 450" stroke="rgba(255, 255, 255, 0.15)"
                                 stroke-width="1" fill="none" />
-                            <!-- Sweeping left curve to Copywriting -->
-                            <path class="tree-path" d="M 200 120 C 150 120, 90 150, 90 260"
+
+                            <!-- Left diamond curve -->
+                            <path class="tree-path" d="M 200 100 C 130 100, 80 150, 80 230 C 80 310, 130 360, 200 360"
                                 stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" fill="none" />
-                            <!-- Sweeping right curve to Campaign Lifecycle -->
-                            <path class="tree-path" d="M 200 120 C 250 120, 310 150, 310 260"
+
+                            <!-- Right diamond curve -->
+                            <path class="tree-path"
+                                d="M 200 100 C 270 100, 320 150, 320 230 C 320 310, 270 360, 200 360"
                                 stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" fill="none" />
-                            <!-- Center line straight down down to Email Design -->
-                            <path class="tree-path" d="M 200 120 L 200 200" stroke="rgba(255, 255, 255, 0.15)"
-                                stroke-width="1" fill="none" />
                         </svg>
 
-                        <!-- Middle Row Nodes perfectly overlapping the new absolute coordinates at (90, 260), (200, 200), (310, 260) -->
+                        <!-- Absolute HTML Nodes perfectly overlapping the SVG anchors -->
                         <div class="tree-nodes">
                             <div class="tree-node tree-node-left">
                                 <img src="assets/agent_avatar_1_yellow.png" alt="Copywriter Agent" class="tree-avatar">
