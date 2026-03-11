@@ -3674,10 +3674,10 @@ a {
 .agent-typing-bubble {
     position: absolute;
     bottom: 4%;
-    right: 75%;
+    right: 95%;
     z-index: 20;
     height: 40px;
-    background: rgba(247, 202, 24, 0.85);
+    background: rgba(247, 202, 24, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 0 1rem;
     border-radius: 12px;
