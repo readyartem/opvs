@@ -3610,7 +3610,7 @@ a {
 }
 
 .cu-skill-item.active .cu-skill-icon {
-    stroke: #ffffff;
+    stroke: var(--accent);
 }
 
 .cu-skill-desc {
@@ -4022,9 +4022,9 @@ a {
 
 .collab-cursor::before {
     content: "↖";
-    font-size: 1rem;
+    font-size: 1.25rem;
     line-height: 1;
-    color: var(--accent);
+    color: var(--accent) !important;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     margin-bottom: 2px;
 }
@@ -4080,7 +4080,7 @@ a {
     border-radius: 12px;
     padding: 1.5rem;
     width: 100%;
-    max-width: 450px;
+    max-width: 400px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--border-color);
     display: flex;
@@ -4125,7 +4125,7 @@ a {
 }
 
 .org-lines {
-    width: 250px;
+    width: 220px;
     height: 30px;
     border-top: 1px solid var(--border-color);
     position: relative;
