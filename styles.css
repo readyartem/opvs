@@ -3962,7 +3962,7 @@ a {
 /* Collab Doc UI Mockup */
 .collab-doc-ui {
     background: var(--bg-primary);
-    border-radius: 24px;
+    border-radius: 12px;
     padding: 1.5rem;
     width: 100%;
     max-width: 400px;
@@ -4085,7 +4085,7 @@ a {
 /* Mini Org Chart Mockup */
 .mini-org-chart {
     background: var(--bg-primary);
-    border-radius: 24px;
+    border-radius: 12px;
     padding: 1.5rem;
     width: 100%;
     max-width: 400px;
@@ -4135,10 +4135,13 @@ a {
 
 .org-lines {
     width: 200px;
-    height: 30px;
+    height: 20px;
     border-top: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-radius: 8px 8px 0 0;
     position: relative;
-    margin: 20px auto;
+    margin: 20px auto 10px auto;
 }
 
 .org-lines::after {
@@ -4170,17 +4173,14 @@ a {
     }
 }
 
-.org-branch.left {
-    left: 0;
-}
-
 .org-branch.center {
     left: 50%;
     transform: translateX(-50%);
 }
 
+.org-branch.left,
 .org-branch.right {
-    right: 0;
+    display: none;
 }
 
 .org-level-bottom {
