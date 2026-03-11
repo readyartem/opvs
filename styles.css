@@ -4268,10 +4268,10 @@ a {
 
 .sh-character-wrapper .waist-character {
     position: relative;
-    height: 120%; /* Scale up so bottom of image is cut off at the section edge, creating a waist-shot */
+    height: 100%;
     width: auto;
-    object-fit: cover;
-    object-position: top center;
+    object-fit: contain;
+    object-position: bottom center;
     z-index: 5;
     pointer-events: auto;
 }
