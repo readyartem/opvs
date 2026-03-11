@@ -3282,6 +3282,7 @@ a {
 .cu-split-prompt-section {
     position: relative;
     padding: 0.5rem 0;
+    margin-top: 8rem;
     background: var(--bg-primary);
 }
 
