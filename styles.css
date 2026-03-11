@@ -3315,11 +3315,11 @@ a {
 .cu-split-prompt-container::after {
     content: "";
     position: absolute;
-    top: 5rem;
-    bottom: 5rem;
+    top: -3rem;
+    bottom: -3rem;
     left: 50%;
     width: 1px;
-    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.15) 80%, transparent);
+    background: rgba(255, 255, 255, 0.15);
     transform: translateX(-50%);
     z-index: 0;
 }
@@ -3354,7 +3354,7 @@ a {
 
 .tree-diagram {
     position: relative;
-    width: 600px;
+    width: 500px;
     height: 520px;
     display: flex;
     flex-direction: column;
@@ -3401,7 +3401,7 @@ a {
 
 .top-node {
     top: 30px;
-    left: 300px;
+    left: 250px;
     transform: translateX(-50%);
 }
 
@@ -3432,35 +3432,35 @@ a {
 .tree-node-left {
     position: absolute;
     top: 250px;
-    left: 80px;
+    left: 100px;
     transform: translateX(-50%);
 }
 
 .tree-node-center {
     position: absolute;
     top: 180px;
-    left: 300px;
+    left: 250px;
     transform: translateX(-50%);
 }
 
 .tree-node-right {
     position: absolute;
     top: 250px;
-    left: 520px;
+    left: 400px;
     transform: translateX(-50%);
 }
 
 .tree-label {
     margin-top: 18px;
     padding: 6px 16px;
-    background: #ffffff;
-    color: #000000;
-    border: none;
+    background: #0a0a0c;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 4px;
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 500;
     white-space: nowrap;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     position: relative;
     z-index: 2;
 }
