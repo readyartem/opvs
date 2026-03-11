@@ -418,9 +418,14 @@
                     <div class="cu-bhc-right">
                         <!-- UI Mockup Inside -->
                         <div class="cu-ui-mockup-window">
-                            <!-- Overlay Image (Transparent Background) - Keep Global for section -->
-                            <img src="assets/agent_email_yellow_nobg.png" alt="Overlay Agent"
-                                class="cu-bhc-overlay-image">
+                            <!-- Overlay Image & Typing Bubble (Global for section) -->
+                            <div class="cu-bhc-overlay-wrapper">
+                                <img src="assets/agent_email_yellow_nobg.png" alt="Overlay Agent"
+                                    class="cu-bhc-overlay-image">
+                                <div class="agent-typing-bubble">
+                                    <span id="agent-typewriter"></span><span class="typing-cursor">|</span>
+                                </div>
+                            </div>
 
                             <!-- EMAIL STATE (Default) -->
                             <div class="mockup-state active" id="mockup-email">

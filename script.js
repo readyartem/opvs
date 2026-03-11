@@ -116,8 +116,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (targetState) {
                     targetState.classList.add('active');
                 }
+
+                // Update the typewriter animation on the overlay agent
+                updateTypewriter(targetId);
             });
         });
+
+        // Initialize Typewriter Logic
+        const typewriterElement = document.getElementById('agent-typewriter');
+        let typewriterTimeout;
+
+        const typewriterMessages = {
+            'email': 'Drafting weekly update to the team...',
+            'dm': 'Crafting personalized connection request...',
+            'task': 'Checking Jira ticket priorities...',
+            'events': 'Finding optimal 30min slot on Google Calendar...',
+            'mentions': 'Searching Notion for Q3 Roadmap...'
+        };
+
+        function updateTypewriter(tabId) {
+            if (!typewriterElement) return;
+
+            const message = typewriterMessages[tabId] || 'Processing request...';
+            typewriterElement.textContent = '';
+            clearTimeout(typewriterTimeout);
+
+            let i = 0;
+            function typeWriter() {
+                if (i < message.length) {
+                    typewriterElement.textContent += message.charAt(i);
+                    i++;
+                    typewriterTimeout = setTimeout(typeWriter, 35); // Fast typing speed
+                }
+            }
+
+            // Start typing shortly after tab switch
+            typewriterTimeout = setTimeout(typeWriter, 250);
+        }
+
+        // Trigger first state on load
+        updateTypewriter('email');
     }
 
     // --- Stats Count-Up Animation ---

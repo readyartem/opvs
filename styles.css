@@ -3655,6 +3655,66 @@ a {
     }
 }
 
+.cu-bhc-overlay-wrapper {
+    position: absolute;
+    bottom: -10px;
+    right: -20px;
+    z-index: 10;
+}
+
+.cu-bhc-overlay-image {
+    width: 280px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 -10px 40px rgba(0, 0, 0, 0.8));
+    display: block;
+}
+
+.agent-typing-bubble {
+    position: absolute;
+    bottom: 25%;
+    right: 80%;
+    background: rgba(10, 10, 12, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1rem;
+    border-radius: 12px 12px 0 12px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: bubbleAppear 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes bubbleAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    background-color: #fff;
+    margin-left: 2px;
+    animation: blinkCursor 1s step-end infinite;
+}
+
+@keyframes blinkCursor {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
 .cu-ui-mockup-window {
     background: #0a0a0c;
     border: 1px solid var(--border-color);
