@@ -3432,7 +3432,7 @@ a {
 .tree-node-left {
     position: absolute;
     top: 250px;
-    left: 100px;
+    left: 140px;
     transform: translateX(-50%);
 }
 
@@ -3446,7 +3446,7 @@ a {
 .tree-node-right {
     position: absolute;
     top: 250px;
-    left: 400px;
+    left: 360px;
     transform: translateX(-50%);
 }
 
@@ -3456,7 +3456,7 @@ a {
     background: #0a0a0c;
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 100px;
+    border-radius: 8px;
     font-size: 0.8rem;
     font-weight: 500;
     white-space: nowrap;
